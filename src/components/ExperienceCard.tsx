@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Calendar, MapPin, Code } from 'lucide-react';
-import { Link } from 'react-router-dom';
+
 
 interface ExperienceCardProps {
   title: string;

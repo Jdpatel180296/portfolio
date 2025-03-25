@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import { FileText, Download, ExternalLink, Award, Briefcase, GraduationCap, Trophy } from 'lucide-react';
+import {  Download, Award, Briefcase, GraduationCap, Trophy } from 'lucide-react';
 
 interface ResumeProps {
   id?: string;

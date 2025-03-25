@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Home from '../pages/Home';
 import Skills from '../pages/Skills';
 import Resume from '../pages/Resume';
