@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import SocialIcons from '../components/SocialIcons';
 import { MapPin, Mail, Phone, Send } from 'lucide-react';
 import { toast } from 'sonner';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 interface ContactProps {
   id?: string;
