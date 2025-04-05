@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import { Button } from './ui/button';
 
+import { Analytics } from "@vercel/analytics/react"
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -90,6 +91,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <Header activeSection={activeSection} setActiveSection={setActiveSection} />
       <main className="pt-14">
         {children}
+        <Analytics />
         <Button
           onClick={handleScrollToTop}
           className={`fixed bottom-4 right-4 md:bottom-8 md:right-8 bg-header text-white p-3 md:p-4 rounded-full shadow-lg hover:bg-opacity-80 transition-all duration-300 z-50 ${

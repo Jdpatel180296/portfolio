@@ -170,16 +170,19 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
                 </div>
               </div>
               
-              <div className="bg-skills rounded-lg p-6 flex items-start">
-                <div className="bg-header text-white p-3 rounded-full mr-4">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-1 text-lg">Email</h3>
-                  <a href="mailto:jaydeepgondaliya182@gmail.com" className="text-blue-600 hover:text-blue-800 transition-colors">
-                    jaydeepgondaliya182@gmail.com
-                  </a>
-                </div>
+              <div className="bg-skills rounded-lg p-6 flex items-start">  
+             <div className="bg-header text-white p-3 rounded-full mr-4 flex-shrink-0">
+              <Mail className="w-5 h-5" />
+               </div>
+               <div className="flex-1 max-w-[200px]">
+                 <h3 className="font-semibold mb-1 text-lg">Email</h3>
+                         <a
+                        href="mailto:jaydeepgondaliya182@gmail.com"
+                    className="text-blue-600 hover:text-blue-800 transition-colors inline-block whitespace-no-wrap break-words"
+                        >
+                   jaydeepgondaliya18@gmail.com
+                    </a>
+                  </div>
               </div>
               
               <div className="bg-skills rounded-lg p-6 flex items-start">
@@ -206,7 +209,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
       </div>
     </div>
   </footer>
-      </section>
+</section>
 
   );
 };

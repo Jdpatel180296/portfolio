@@ -2,6 +2,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useState, useEffect } from 'react';
 import Header from './Header';
 import { Button } from './ui/button';
+import { Analytics } from "@vercel/analytics/react";
 const Layout = ({ children }) => {
     const [activeSection, setActiveSection] = useState('home');
     const sections = [
@@ -65,6 +66,6 @@ const Layout = ({ children }) => {
             customSmoothScroll(offsetPosition, 300);
         }
     };
-    return (_jsxs("div", { className: "min-h-screen", children: [_jsx(Header, { activeSection: activeSection, setActiveSection: setActiveSection }), _jsxs("main", { className: "pt-14", children: [children, _jsx(Button, { onClick: handleScrollToTop, className: `fixed bottom-4 right-4 md:bottom-8 md:right-8 bg-header text-white p-3 md:p-4 rounded-full shadow-lg hover:bg-opacity-80 transition-all duration-300 z-50 ${activeSection !== 'home' ? 'opacity-100 visible' : 'opacity-0 invisible'}`, children: _jsx("i", { className: "bx bx-chevron-up text-xl md:text-2xl" }) })] })] }));
+    return (_jsxs("div", { className: "min-h-screen", children: [_jsx(Header, { activeSection: activeSection, setActiveSection: setActiveSection }), _jsxs("main", { className: "pt-14", children: [children, _jsx(Analytics, {}), _jsx(Button, { onClick: handleScrollToTop, className: `fixed bottom-4 right-4 md:bottom-8 md:right-8 bg-header text-white p-3 md:p-4 rounded-full shadow-lg hover:bg-opacity-80 transition-all duration-300 z-50 ${activeSection !== 'home' ? 'opacity-100 visible' : 'opacity-0 invisible'}`, children: _jsx("i", { className: "bx bx-chevron-up text-xl md:text-2xl" }) })] })] }));
 };
 export default Layout;
