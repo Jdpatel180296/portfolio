@@ -19,9 +19,9 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
           
           <div className="flex justify-center mb-10">
             <a 
-              href="#" 
+              href="/Resume.pdf" 
               className="btn"
-              download
+              target='_blank'
             >
               <Download className="w-4 h-4 mr-2" />
               Download Resume
