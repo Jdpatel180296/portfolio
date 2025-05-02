@@ -7,17 +7,57 @@ import Projects from './pages/Projects';
 import Certificates from './pages/Certificates';
 import Resume from './pages/Resume';
 import Contact from './pages/Contact';
+import { motion } from 'framer-motion';
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const AnimatedSection: React.FC<{ id: string; children: React.ReactNode }> = ({ id, children }) => (
+  <motion.section
+    id={id}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    variants={sectionVariants}
+    className="py-1"
+  >
+    {children}
+  </motion.section>
+);
 
 const App: React.FC = () => {
   return (
     <Layout>
-      <Home id="home" />
-      <Skills id="skills" />
-      <Experience id="experience" />
-      <Projects id="projects" />
-      <Certificates id="certificates" />
-      <Resume id="resume" />
-      <Contact id="contact" />
+      <AnimatedSection id="home">
+        <Home />
+      </AnimatedSection>
+
+      <AnimatedSection id="skills">
+        <Skills />
+      </AnimatedSection>
+
+      <AnimatedSection id="experience">
+        <Experience />
+      </AnimatedSection>
+
+      <AnimatedSection id="projects">
+        <Projects />
+      </AnimatedSection>
+
+      <AnimatedSection id="certificates">
+        <Certificates />
+      </AnimatedSection>
+
+      <AnimatedSection id="resume">
+        <Resume />
+      </AnimatedSection>
+
+      <AnimatedSection id="contact">
+        <Contact />
+      </AnimatedSection>
     </Layout>
   );
 };

@@ -1,7 +1,6 @@
 import React from 'react';
-import { LucideIcon } from 'lucide-react';
 interface SkillIconProps {
-    icon: LucideIcon;
+    iconSrc: string;
     name: string;
 }
 declare const SkillIcon: React.FC<SkillIconProps>;

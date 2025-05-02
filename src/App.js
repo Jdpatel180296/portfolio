@@ -7,7 +7,13 @@ import Projects from './pages/Projects';
 import Certificates from './pages/Certificates';
 import Resume from './pages/Resume';
 import Contact from './pages/Contact';
+import { motion } from 'framer-motion';
+const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+};
+const AnimatedSection = ({ id, children }) => (_jsx(motion.section, { id: id, initial: "hidden", whileInView: "visible", viewport: { once: true, amount: 0.2 }, transition: { duration: 0.6, ease: "easeOut" }, variants: sectionVariants, className: "py-1", children: children }));
 const App = () => {
-    return (_jsxs(Layout, { children: [_jsx(Home, { id: "home" }), _jsx(Skills, { id: "skills" }), _jsx(Experience, { id: "experience" }), _jsx(Projects, { id: "projects" }), _jsx(Certificates, { id: "certificates" }), _jsx(Resume, { id: "resume" }), _jsx(Contact, { id: "contact" })] }));
+    return (_jsxs(Layout, { children: [_jsx(AnimatedSection, { id: "home", children: _jsx(Home, {}) }), _jsx(AnimatedSection, { id: "skills", children: _jsx(Skills, {}) }), _jsx(AnimatedSection, { id: "experience", children: _jsx(Experience, {}) }), _jsx(AnimatedSection, { id: "projects", children: _jsx(Projects, {}) }), _jsx(AnimatedSection, { id: "certificates", children: _jsx(Certificates, {}) }), _jsx(AnimatedSection, { id: "resume", children: _jsx(Resume, {}) }), _jsx(AnimatedSection, { id: "contact", children: _jsx(Contact, {}) })] }));
 };
 export default App;

@@ -43,8 +43,9 @@ const Home: React.FC<HomeProps> = ({ id }) => {
               <SocialIcons />
               
               <a 
-                href="/resume" 
+                href="/Resume.pdf" 
                 className="btn"
+                target='_blank'
               >
                 Download Resume
               </a>

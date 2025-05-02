@@ -1,7 +1,59 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import SkillIcon from '../components/SkillIcon';
-import { Code, FileCode, Box, Server, Database, Cpu, GitBranch, PenTool, BrainCircuit, Wrench } from 'lucide-react';
+import { motion } from 'framer-motion';
+const skillsData = [
+    {
+        title: "Languages",
+        skills: [
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", name: "JavaScript" },
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", name: "Java" },
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", name: "Python" },
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", name: "HTML" },
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", name: "CSS" },
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", name: "TypeScript" }
+        ]
+    },
+    {
+        title: "Backend",
+        skills: [
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", name: "Node.js" },
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", name: "Express.js" },
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg", name: "Spring Boot" },
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg", name: "GraphQL" },
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg", name: "Firebase" },
+        ]
+    },
+    {
+        title: "Frontend",
+        skills: [
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", name: "React" },
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg", name: "Vue.js" },
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg", name: "Redux" },
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg", name: "Tailwind CSS" }
+        ]
+    },
+    {
+        title: "Database",
+        skills: [
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", name: "MongoDB" },
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", name: "MySQL" },
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", name: "PostgreSQL" },
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg", name: "Redis" }
+        ]
+    },
+    {
+        title: "Tools & Libraries",
+        skills: [
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", name: "Git" },
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", name: "GitHub" },
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg", name: "Docker" },
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg", name: "Kubernetes" },
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg", name: "NumPy" },
+            { iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg", name: "Pandas" },
+        ]
+    }
+];
 const Skills = ({ id }) => {
-    return (_jsx("section", { id: id, className: "bg-section2 min-h-screen py-20 px-3 flex flex-col justify-center", children: _jsxs("div", { className: "max-w-7xl mx-auto", children: [_jsx("div", { className: "text-center mb-16", children: _jsxs("h1", { className: "section-title", children: ["My ", _jsx("span", { className: "text-header", children: "Skills" })] }) }), _jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8", children: [_jsxs("div", { className: "bg-white rounded-lg shadow-lg p-10", children: [_jsx("h2", { className: "text-3xl font-bold mb-8 border-b pb-3", children: "Languages" }), _jsxs("div", { className: "grid grid-cols-2 md:grid-cols-3 gap-10", children: [_jsx(SkillIcon, { icon: FileCode, name: "JavaScript" }), _jsx(SkillIcon, { icon: Code, name: "Java" }), _jsx(SkillIcon, { icon: FileCode, name: "Python" }), _jsx(SkillIcon, { icon: FileCode, name: "HTML" }), _jsx(SkillIcon, { icon: FileCode, name: "CSS" }), _jsx(SkillIcon, { icon: FileCode, name: "TypeScript" })] })] }), _jsxs("div", { className: "bg-white rounded-lg shadow-lg p-10", children: [_jsx("h2", { className: "text-3xl font-bold mb-8 border-b pb-3", children: "Backend" }), _jsxs("div", { className: "grid grid-cols-2 md:grid-cols-3 gap-10", children: [_jsx(SkillIcon, { icon: Server, name: "Node.js" }), _jsx(SkillIcon, { icon: Server, name: "Express.js" }), _jsx(SkillIcon, { icon: Box, name: "Spring Boot" }), _jsx(SkillIcon, { icon: Server, name: "REST API" }), _jsx(SkillIcon, { icon: Server, name: "GraphQL" }), _jsx(SkillIcon, { icon: Server, name: "Firebase" })] })] }), _jsxs("div", { className: "bg-white rounded-lg shadow-lg p-10", children: [_jsx("h2", { className: "text-3xl font-bold mb-8 border-b pb-3", children: "Frontend" }), _jsxs("div", { className: "grid grid-cols-2 md:grid-cols-3 gap-10", children: [_jsx(SkillIcon, { icon: Box, name: "React" }), _jsx(SkillIcon, { icon: Box, name: "Vue.js" }), _jsx(SkillIcon, { icon: Box, name: "React Native" }), _jsx(SkillIcon, { icon: PenTool, name: "UI/UX Design" }), _jsx(SkillIcon, { icon: PenTool, name: "Tailwind CSS" }), _jsx(SkillIcon, { icon: Box, name: "Redux" })] })] }), _jsxs("div", { className: "bg-white rounded-lg shadow-lg p-10", children: [_jsx("h2", { className: "text-3xl font-bold mb-8 border-b pb-3", children: "Database" }), _jsxs("div", { className: "grid grid-cols-2 md:grid-cols-3 gap-10", children: [_jsx(SkillIcon, { icon: Database, name: "MongoDB" }), _jsx(SkillIcon, { icon: Database, name: "SQL" }), _jsx(SkillIcon, { icon: Database, name: "Firebase" }), _jsx(SkillIcon, { icon: Database, name: "Redis" }), _jsx(SkillIcon, { icon: Database, name: "PostgreSQL" }), _jsx(SkillIcon, { icon: Database, name: "MySQL" })] })] }), _jsxs("div", { className: "bg-white rounded-lg shadow-lg p-10 md:col-span-2", children: [_jsx("h2", { className: "text-3xl font-bold mb-8 border-b pb-3", children: "Tools & Libraries" }), _jsxs("div", { className: "grid grid-cols-2 md:grid-cols-6 gap-10", children: [_jsx(SkillIcon, { icon: Wrench, name: "Pandas" }), _jsx(SkillIcon, { icon: Wrench, name: "Matplotlib" }), _jsx(SkillIcon, { icon: Wrench, name: "scikit-learn" }), _jsx(SkillIcon, { icon: Wrench, name: "NumPy" }), _jsx(SkillIcon, { icon: GitBranch, name: "GitHub" }), _jsx(SkillIcon, { icon: GitBranch, name: "Git" }), _jsx(SkillIcon, { icon: Wrench, name: "Jira" }), _jsx(SkillIcon, { icon: Cpu, name: "Docker" }), _jsx(SkillIcon, { icon: Cpu, name: "Kubernetes" }), _jsx(SkillIcon, { icon: BrainCircuit, name: "AI & ML" }), _jsx(SkillIcon, { icon: BrainCircuit, name: "Data Science" }), _jsx(SkillIcon, { icon: Cpu, name: "Microservices" })] })] })] })] }) }));
+    return (_jsx("section", { id: id, className: "bg-section2 min-h-screen py-20 px-3 flex flex-col justify-center", children: _jsxs("div", { className: "max-w-7xl mx-auto", children: [_jsxs("h1", { className: "section-title text-center mb-16", children: ["My ", _jsx("span", { className: "text-header", children: "Skills" })] }), _jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8", children: skillsData.map((group, idx) => (_jsxs(motion.div, { className: `bg-white rounded-lg shadow-lg p-10 ${group.title === "Tools & Libraries" ? "md:col-span-2" : ""}`, initial: { opacity: 0, y: 40 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, transition: { duration: 0.7, delay: idx * 0.3 }, children: [_jsx("h2", { className: "text-3xl font-bold mb-8 border-b pb-3", children: group.title }), _jsx("div", { className: `grid grid-cols-3 md:grid-cols-${group.title === "Tools & Libraries" ? "6" : "3"} gap-10`, children: group.skills.map((skill, index) => (_jsx(SkillIcon, { iconSrc: skill.iconSrc, name: skill.name }, index))) })] }, idx))) })] }) }));
 };
 export default Skills;

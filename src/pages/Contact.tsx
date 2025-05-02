@@ -68,14 +68,14 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
 
   return (
 
-      <section id={id} className="min-h-screen py-16 px-3 bg-section2">
+      <section id={id} className="min-h-screen py-16 px-3 bg-section1">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="section-title">Contact <span className="text-header">Me</span></h1>
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-8 mb-12">
+            <form onSubmit={handleSubmit} className="bg-section2 rounded-lg shadow-lg p-8 mb-12">
             
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                 <div>
@@ -174,14 +174,11 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
              <div className="bg-header text-white p-3 rounded-full mr-4 flex-shrink-0">
               <Mail className="w-5 h-5" />
                </div>
-               <div className="flex-1 max-w-[200px]">
+               <div className="flex-1 max-w-[300px]">
                  <h3 className="font-semibold mb-1 text-lg">Email</h3>
-                         <a
-                        href="mailto:jaydeepgondaliya182@gmail.com"
-                    className="text-blue-600 hover:text-blue-800 transition-colors inline-block whitespace-no-wrap break-words"
-                        >
-                   jaydeepgondaliya18@gmail.com
-                    </a>
+                 <a href="mailto:jaydeepgondaliya182@gmail.com" className="text-blue-600 hover:text-blue-800 transition-colors inline-block break-words break-all">
+                        jaydeepgondaliya18@gmail.com
+                  </a>
                   </div>
               </div>
               
@@ -200,7 +197,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
           </div>
         </div>
       
-        <footer className="bg-section1 py-10 mt-16">
+        <footer className="bg-section2 py-10 mt-16">
     <div className="mx-full px-0">
       <div className="text-center">
         <h3 className="font-semibold mb-4 text-5xl">Connect with me</h3>

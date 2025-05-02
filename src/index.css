@@ -206,9 +206,96 @@
   }
 
   .experience-box:hover {
-    @apply border-header transform scale-[1.02];
+    @apply border-header transform;
   }
 
+
+  /* time line css */
+
+
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #4D4D4D;
+    /* header color */
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: stretch;
+    gap: 2rem;
+  }
+
+
+  .timeline-content-left,
+  .timeline-content-right {
+    padding: 1rem;
+    position: relative;
+    width: 100%;
+  }
+
+  .timeline-content-left::after,
+  .timeline-content-right::after {
+    content: '';
+    position: absolute;
+    top: 1.5rem;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+  }
+
+  .timeline-content-left::after {
+    right: -16px;
+    border-left-color: white;
+  }
+
+  .timeline-content-right::after {
+    left: -16px;
+    border-right-color: white;
+  }
+
+
+
+  /* project section css */
+  .project-card {
+    @apply bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl;
+  }
+
+  .project-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .project-image-wrapper {
+    @apply relative overflow-hidden;
+  }
+
+  .project-image-wrapper::after {
+    content: '';
+    @apply absolute inset-0 bg-black opacity-0 transition-opacity duration-500;
+    pointer-events: none;
+    /* ✅ Add this line */
+  }
+
+
+  .project-image-wrapper:hover::after {
+    @apply opacity-20;
+  }
+
+
+
+  /* certificate section css */
   .certificate-card {
     @apply bg-skills p-8 rounded-2xl overflow-visible transition-all duration-300;
   }
