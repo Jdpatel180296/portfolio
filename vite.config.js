@@ -8,9 +8,6 @@ export default defineConfig(() => ({
     port: 8080,
   },
   plugins: [react()].filter(Boolean),
-  build: {
-    outDir: "my_custom_build",
-  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
