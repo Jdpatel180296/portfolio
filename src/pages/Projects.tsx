@@ -94,7 +94,7 @@ const Projects: React.FC<ProjectsProps> = ({ id }) => {
       description: "The Amazon Employee Access Challenge addresses the critical task of predicting employee access requirements within Amazon's internal network",
       technologies: ["Python", "Numpy", "Node.js", "GPT-4 API", "Convex"],
       githubLink: "https://github.com/Jdpatel180296/AmazonEmployeeAccessChalange",
-      image: "/photo/AI_town.jpg",
+      image: "/photo/Amazon_emp.jpeg",
     },
     {
       title: "AI Town Simulation",
