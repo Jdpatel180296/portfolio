@@ -4,12 +4,20 @@ import { motion } from 'framer-motion';
 const Projects = ({ id }) => {
     const projects = [
         {
+            title: "Early Skin Cancer Detection",
+            period: "Jan 2025 - May 2025",
+            description: "Developed a deep learning model for melanoma detection using smartphone-quality images. Used CNNs (EfficientNet, ResNet, MobileNet) with metadata fusion to achieve 92.9% AUC.",
+            technologies: ["Python", "TensorFlow", "NumPy", "EfficientNet", "ResNet", "MobileNet"],
+            githubLink: "https://github.com/Jdpatel180296/cs5661-dsproject-Early-Skin-Cancer-Detection-Bringing-Dermatology-to-Everyone",
+            image: "/photo/skin_cancer.png", // update this path or use placeholder if not available
+        },
+        {
             title: "Amazon Employee Access Chalange",
             period: "Oct 2024 - Dec 2024",
             description: "The Amazon Employee Access Challenge addresses the critical task of predicting employee access requirements within Amazon's internal network",
             technologies: ["Python", "Numpy", "Node.js", "GPT-4 API", "Convex"],
             githubLink: "https://github.com/Jdpatel180296/AmazonEmployeeAccessChalange",
-            image: "/photo/AI_town.jpg",
+            image: "/photo/Amazon_emp.jpeg",
         },
         {
             title: "AI Town Simulation",

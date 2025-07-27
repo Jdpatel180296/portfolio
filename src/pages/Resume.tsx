@@ -1,168 +1,10 @@
-// import React from 'react';
-
-// import { Download, Award, Briefcase, GraduationCap, Trophy } from 'lucide-react';
-
-// interface ResumeProps {
-//   id?: string;
-// }
-
-// const Resume: React.FC<ResumeProps> = ({ id }) => {
-//   return (
-//     <section id={id} className="bg-section2 min-h-screen py-16 px-6 flex fex-col">
-//       <div className="max-w-4xl mx-auto">
-//         <div className="text-center mb-16">
-//           <h1 className="section-title">Resume</h1>
-//           <p className="text-gray-600 mt-4">My educational background and professional experience</p>
-//         </div>
-
-//         <div className="flex justify-center mb-10">
-//           <a href="/Resume.pdf" className="btn" target="_blank">
-//             <Download className="w-4 h-4 mr-2" />
-//             Download Resume
-//           </a>
-//         </div>
-
-//         {/* Education Section */}
-//         <div className="bg-section1 rounded-lg shadow-lg p-8 mb-10">
-//           <div className="flex items-center mb-6">
-//             <GraduationCap className="w-6 h-6 text-header mr-3" />
-//             <h2 className="text-2xl font-bold">Education</h2>
-//           </div>
-//           <div className="border-l-2 border-gray-200 pl-5 ml-3 space-y-8">
-//             <div className="relative">
-//               <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header"></div>
-//               <h3 className="text-xl font-bold">Master's in Computer Science</h3>
-//               <p className="text-gray-700">California State University, Los Angeles</p>
-//               <p className="text-gray-500">Los Angeles, California</p>
-//               <p className="text-gray-600 mt-1">GPA: 3.79</p>
-//               <p className="text-gray-600">Aug 2023 – May 2025</p>
-//             </div>
-//             <div className="relative">
-//               <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header"></div>
-//               <h3 className="text-xl font-bold">Bachelor of Computer Engineering</h3>
-//               <p className="text-gray-700">Gujarat Technological University</p>
-//               <p className="text-gray-500">Gujarat, India</p>
-//               <p className="text-gray-600 mt-1">GPA: 3.44</p>
-//               <p className="text-gray-600">Aug 2013 – Jun 2017</p>
-//             </div>
-//           </div>
-//         </div>
-
-//         {/* Work Experience Section */}
-//         <div className="bg-section1 rounded-lg shadow-lg p-8 mb-10">
-//           <div className="flex items-center mb-6">
-//             <Briefcase className="w-6 h-6 text-header mr-3" />
-//             <h2 className="text-2xl font-bold">Work Experience</h2>
-//           </div>
-//           <div className="border-l-2 border-gray-200 pl-5 ml-3 space-y-8">
-//             <div className="relative">
-//               <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header"></div>
-//               <h3 className="text-xl font-bold">Graduate Research Assistant</h3>
-//               <p className="text-gray-700">California State University</p>
-//               <p className="text-gray-500">Feb 2025 – Present</p>
-//               <ul className="mt-2 list-disc pl-5 space-y-2">
-//                 <li>Contributed in the research on LLM to find cosine similarity with 90% accuracy.</li>
-//               </ul>
-//             </div>
-//             <div className="relative">
-//               <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header"></div>
-//               <h3 className="text-xl font-bold">Software Developer</h3>
-//               <p className="text-gray-700">Alphaved Pvt Ltd | Surat, Gujarat, India</p>
-//               <p className="text-gray-500">Jun 2020 – Jul 2023</p>
-//               <ul className="mt-2 list-disc pl-5 space-y-2">
-//                 <li>Built secure backend APIs with JWT authentication and role-based access control.</li>
-//                 <li>Optimized performance using lazy loading, Redis caching, and CDN delivery.</li>
-//                 <li>Integrated Razorpay for real-time payments with smart failure handling.</li>
-//               </ul>
-//             </div>
-//             <div className="relative">
-//               <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header"></div>
-//               <h3 className="text-xl font-bold">Junior Software Developer</h3>
-//               <p className="text-gray-700">Webcodez Infoway | Rajkot, Gujarat, India</p>
-//               <p className="text-gray-500">Feb 2018 – May 2020</p>
-//               <ul className="mt-2 list-disc pl-5 space-y-2">
-//                 <li>Developed Node.js + MongoDB APIs for Angel Cineworld project.</li>
-//                 <li>Performed testing with Jest and Enzyme to reduce bottlenecks by 30%.</li>
-//               </ul>
-//             </div>
-//             <div className="relative">
-//               <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header"></div>
-//               <h3 className="text-xl font-bold">Intern – Junior Programmer Trainee</h3>
-//               <p className="text-gray-700">Aisomex Pvt. Ltd. | Rajkot, Gujarat, India</p>
-//               <p className="text-gray-500">Jun 2016 – Dec 2016</p>
-//               <ul className="mt-2 list-disc pl-5 space-y-2">
-//                 <li>Built dual-role user system and integrated Firebase-based chat.</li>
-//                 <li>Optimized image upload performance and stability on Android devices.</li>
-//               </ul>
-//             </div>
-//           </div>
-//         </div>
-
-//         {/* Projects Section */}
-//         <div className="bg-section1 rounded-lg shadow-lg p-8 mb-10">
-//           <div className="flex items-center mb-6">
-//             <Trophy className="w-6 h-6 text-header mr-3" />
-//             <h2 className="text-2xl font-bold">Projects</h2>
-//           </div>
-//           <div className="border-l-2 border-gray-200 pl-5 ml-3 space-y-8">
-//             <div className="relative">
-//               <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header"></div>
-//               <h3 className="text-xl font-bold">AI Town Simulation</h3>
-//               <p className="text-gray-700 italic">Oct 2023 – Dec 2023</p>
-//               <p className="text-gray-600 mt-1">Tech: JavaScript, TypeScript, Node.js, Python, GPT-4 API, Convex</p>
-//               <ul className="mt-2 list-disc pl-5 space-y-2">
-//                 <li>Built an AI simulation using GPT-4 with interactive agents and real-time updates via Convex.</li>
-//               </ul>
-//             </div>
-//             <div className="relative">
-//               <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header"></div>
-//               <h3 className="text-xl font-bold">Restaurant Application</h3>
-//               <p className="text-gray-700 italic">Sep 2023 – Nov 2023</p>
-//               <p className="text-gray-600 mt-1">Tech: React Native, Firebase</p>
-//               <ul className="mt-2 list-disc pl-5 space-y-2">
-//                 <li>Developed app with QR-based table booking and traffic analysis.</li>
-//                 <li>Boosted performance and search efficiency using algorithms.</li>
-//               </ul>
-//             </div>
-//           </div>
-//         </div>
-
-//         {/* Certifications Section */}
-//         <div className="bg-section1 rounded-lg shadow-lg p-8">
-//           <div className="flex items-center mb-6">
-//             <Award className="w-6 h-6 text-header mr-3" />
-//             <h2 className="text-2xl font-bold">Certifications</h2>
-//           </div>
-//           <div className="border-l-2 border-gray-200 pl-5 ml-3 space-y-6">
-//             <div className="relative">
-//               <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header"></div>
-//               <h3 className="text-xl font-bold">Walmart’s Advanced Software Engineering Job Simulation</h3>
-//               <p className="text-gray-700">Forage | Sep 2024</p>
-//             </div>
-//             <div className="relative">
-//               <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header"></div>
-//               <h3 className="text-xl font-bold">J.P. Morgan Software Engineering Virtual Experience</h3>
-//               <p className="text-gray-700">Forage | Jul 2024</p>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Resume;
-
-
 import React from 'react';
-
 import { Download, Award, Briefcase, GraduationCap, Trophy } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface ResumeProps {
   id?: string;
 }
-
-import { motion } from 'framer-motion';
 
 const Resume: React.FC<ResumeProps> = ({ id }) => {
   return (
@@ -184,8 +26,7 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
         >
           <h1 className="section-title">Resume</h1>
           <p className="text-gray-600 mt-4">My educational background and professional experience</p>
-          </motion.div>
-        </div>
+        </motion.div>
 
         <div className="flex justify-center mb-10">
           <a href="/Resume.pdf" className="btn" target="_blank">
@@ -195,156 +36,186 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
         </div>
 
         {/* Education Section */}
-        <motion.div
-          className="bg-section1 rounded-lg shadow-lg p-8 mb-10"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <div className="flex items-center mb-6">
-            <GraduationCap className="w-6 h-6 text-header mr-3" />
-            <h2 className="text-2xl font-bold">Education</h2>
-          </div>
-          <div className="border-l-2 border-gray-200 pl-5 ml-3 space-y-8">
-            <div className="relative">
-              <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header"></div>
-              <h3 className="text-xl font-bold">Master's in Computer Science</h3>
-              <p className="text-gray-700">California State University, Los Angeles</p>
-              <p className="text-gray-500">Los Angeles, California</p>
-              <p className="text-gray-600 mt-1">GPA: 3.79</p>
-              <p className="text-gray-600">Aug 2023 – May 2025</p>
-            </div>
-            <div className="relative">
-              <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header"></div>
-              <h3 className="text-xl font-bold">Bachelor of Computer Engineering</h3>
-              <p className="text-gray-700">Gujarat Technological University</p>
-              <p className="text-gray-500">Gujarat, India</p>
-              <p className="text-gray-600 mt-1">GPA: 3.44</p>
-              <p className="text-gray-600">Aug 2013 – Jun 2017</p>
-            </div>
-          </div>
-          </motion.div>
-     
+        <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" {...fadeInProps}>
+          <SectionHeader icon={<GraduationCap />} title="Education" />
+          <TimelineItem
+            title="Master's in Computer Science"
+            subtitle="California State University, Los Angeles"
+            location="Los Angeles, California"
+            time="Aug 2023 – May 2025"
+            details={["GPA: 3.89"]}
+          />
+          <TimelineItem
+            title="Bachelor of Computer Engineering"
+            subtitle="Gujarat Technological University"
+            location="Gujarat, India"
+            time="Aug 2013 – Jun 2017"
+            details={["GPA: 3.44"]}
+          />
+        </motion.div>
+
+        {/* Coursework Section */}
+        <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" {...fadeInProps}>
+          <SectionHeader icon={<GraduationCap />} title="Coursework" />
+          <p className="text-gray-600">
+            Advanced Web Development, Algorithms, Advanced Functional Programming, Advanced AI, Data Science,
+            Advanced Data Science, Advanced Software Engineering
+          </p>
+        </motion.div>
+
+        {/* Skills Section */}
+        <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" {...fadeInProps}>
+          <SectionHeader icon={<Trophy />} title="Skills" />
+          <p className="text-gray-600">
+            <strong>Languages:</strong> Python, Java, JavaScript, SQL, HTML/CSS<br />
+            <strong>Tools/Libraries:</strong> Pandas, NumPy, Scikit-learn, TensorFlow, Matplotlib<br />
+            <strong>Frameworks:</strong> Node.js, Express.js, Spring Boot, Vue.js, React<br />
+            <strong>Database:</strong> MongoDB, Firebase, SQL<br />
+            <strong>Other:</strong> Git, Redis, JIRA, Convex, Vercel
+          </p>
+        </motion.div>
 
         {/* Work Experience Section */}
-        <motion.div
-          className="bg-section1 rounded-lg shadow-lg p-8 mb-10"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <div className="flex items-center mb-6">
-            <Briefcase className="w-6 h-6 text-header mr-3" />
-            <h2 className="text-2xl font-bold">Work Experience</h2>
-          </div>
-          <div className="border-l-2 border-gray-200 pl-5 ml-3 space-y-8">
-            <div className="relative">
-              <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header"></div>
-              <h3 className="text-xl font-bold">Graduate Research Assistant</h3>
-              <p className="text-gray-700">California State University</p>
-              <p className="text-gray-500">Feb 2025 – Present</p>
-              <ul className="mt-2 list-disc pl-5 space-y-2">
-                <li>Contributed in the research on LLM to find cosine similarity with 90% accuracy.</li>
-              </ul>
-            </div>
-            <div className="relative">
-              <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header"></div>
-              <h3 className="text-xl font-bold">Software Developer</h3>
-              <p className="text-gray-700">Alphaved Pvt Ltd | Surat, Gujarat, India</p>
-              <p className="text-gray-500">Jun 2020 – Jul 2023</p>
-              <ul className="mt-2 list-disc pl-5 space-y-2">
-                <li>Built secure backend APIs with JWT authentication and role-based access control.</li>
-                <li>Optimized performance using lazy loading, Redis caching, and CDN delivery.</li>
-                <li>Integrated Razorpay for real-time payments with smart failure handling.</li>
-              </ul>
-            </div>
-            <div className="relative">
-              <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header"></div>
-              <h3 className="text-xl font-bold">Junior Software Developer</h3>
-              <p className="text-gray-700">Webcodez Infoway | Rajkot, Gujarat, India</p>
-              <p className="text-gray-500">Feb 2018 – May 2020</p>
-              <ul className="mt-2 list-disc pl-5 space-y-2">
-                <li>Developed Node.js + MongoDB APIs for Angel Cineworld project.</li>
-                <li>Performed testing with Jest and Enzyme to reduce bottlenecks by 30%.</li>
-              </ul>
-            </div>
-            <div className="relative">
-              <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header"></div>
-              <h3 className="text-xl font-bold">Intern – Junior Programmer Trainee</h3>
-              <p className="text-gray-700">Aisomex Pvt. Ltd. | Rajkot, Gujarat, India</p>
-              <p className="text-gray-500">Jun 2016 – Dec 2016</p>
-              <ul className="mt-2 list-disc pl-5 space-y-2">
-                <li>Built dual-role user system and integrated Firebase-based chat.</li>
-                <li>Optimized image upload performance and stability on Android devices.</li>
-              </ul>
-            </div>
-          </div>
-          </motion.div>
+        <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" {...fadeInProps}>
+          <SectionHeader icon={<Briefcase />} title="Work Experience" />
+          <TimelineItem
+            title="Graduate Research Assistant"
+            subtitle="California State University"
+            time="Feb 2025 – Present"
+            details={[
+              "Developed front-end/backend pipeline to analyze human vs. AI-generated text.",
+              "Engineered cosine similarity backend with 90% accuracy.",
+              "Automated conversion to structured CSV datasets.",
+            ]}
+          />
+          <TimelineItem
+            title="Software Developer"
+            subtitle="Alphaved Pvt Ltd | Surat, Gujarat, India"
+            time="Jun 2020 – Jul 2023"
+            details={[
+              "Built secure backend APIs with JWT authentication and access control.",
+              "Optimized system using Redis, lazy loading, and server-side pagination.",
+              "Integrated Razorpay for real-time secure payments with failure handling.",
+            ]}
+          />
+          <TimelineItem
+            title="Junior Software Developer"
+            subtitle="Webcodez Infoway | Rajkot, Gujarat, India"
+            time="Feb 2018 – May 2020"
+            details={[
+              "Built Node.js APIs for Angel Cineworld project with MongoDB integration.",
+              "Reduced support tickets by 15% through code maintenance and debugging.",
+            ]}
+          />
+          <TimelineItem
+            title="Intern – Junior Programmer Trainee"
+            subtitle="Aisomex Pvt. Ltd. | Rajkot, Gujarat, India"
+            time="Jun 2016 – Dec 2016"
+            details={[
+              "Designed dual-role user system with Firebase-based chat.",
+              "Optimized Android image uploads, improving stability by 50%.",
+            ]}
+          />
+        </motion.div>
 
         {/* Projects Section */}
-        <motion.div
-          className="bg-section1 rounded-lg shadow-lg p-8 mb-10"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <div className="flex items-center mb-6">
-            <Trophy className="w-6 h-6 text-header mr-3" />
-            <h2 className="text-2xl font-bold">Projects</h2>
-          </div>
-          <div className="border-l-2 border-gray-200 pl-5 ml-3 space-y-8">
-            <div className="relative">
-              <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header"></div>
-              <h3 className="text-xl font-bold">AI Town Simulation</h3>
-              <p className="text-gray-700 italic">Oct 2023 – Dec 2023</p>
-              <p className="text-gray-600 mt-1">Tech: JavaScript, TypeScript, Node.js, Python, GPT-4 API, Convex</p>
-              <ul className="mt-2 list-disc pl-5 space-y-2">
-                <li>Built an AI simulation using GPT-4 with interactive agents and real-time updates via Convex.</li>
-              </ul>
-            </div>
-            <div className="relative">
-              <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header"></div>
-              <h3 className="text-xl font-bold">Restaurant Application</h3>
-              <p className="text-gray-700 italic">Sep 2023 – Nov 2023</p>
-              <p className="text-gray-600 mt-1">Tech: React Native, Firebase</p>
-              <ul className="mt-2 list-disc pl-5 space-y-2">
-                <li>Developed app with QR-based table booking and traffic analysis.</li>
-                <li>Boosted performance and search efficiency using algorithms.</li>
-              </ul>
-            </div>
-          </div>
+        <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" {...fadeInProps}>
+          <SectionHeader icon={<Trophy />} title="Projects" />
+          <TimelineItem
+            title="Early Skin Cancer Detection"
+            time="Jan 2025 – May 2025"
+            details={[
+              "Developed DL pipeline using EfficientNet, ResNet, MobileNet with metadata fusion.",
+              "Achieved AUC of 92.9% using EfficientNetV2-B0.",
+            ]}
+          />
+          <TimelineItem
+            title="Amazon Employee Access Prediction"
+            time="Oct 2024 – Dec 2024"
+            details={[
+              "Built models with Logistic Regression, Random Forest, XGBoost, CatBoost (95.6% accuracy).",
+              "Evaluated models with AUC, precision, recall, F1-score.",
+            ]}
+          />
+          <TimelineItem
+            title="AI Town Simulation"
+            time="Oct 2023 – Dec 2023"
+            details={[
+              "Built GPT-4 based agent simulation with real-time backend (Convex).",
+              "Enabled dynamic memory-based conversations.",
+            ]}
+          />
+          <TimelineItem
+            title="Restaurant Application"
+            time="Sep 2023 – Nov 2023"
+            details={[
+              "React Native app with QR-based reservations and live revenue prediction.",
+              "Boosted search speed by 83% using binary search.",
+            ]}
+          />
         </motion.div>
 
         {/* Certifications Section */}
-        <motion.div
-          className="bg-section1 rounded-lg shadow-lg p-8"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <div className="flex items-center mb-6">
-            <Award className="w-6 h-6 text-header mr-3" />
-            <h2 className="text-2xl font-bold">Certifications</h2>
-          </div>
-          <div className="border-l-2 border-gray-200 pl-5 ml-3 space-y-6">
-            <div className="relative">
-              <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header"></div>
-              <h3 className="text-xl font-bold">Walmart’s Advanced Software Engineering Job Simulation</h3>
-              <p className="text-gray-700">Forage | Sep 2024</p>
-            </div>
-            <div className="relative">
-              <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header"></div>
-              <h3 className="text-xl font-bold">J.P. Morgan Software Engineering Virtual Experience</h3>
-              <p className="text-gray-700">Forage | Jul 2024</p>
-            </div>
-          </div>
+        <motion.div className="bg-section1 rounded-lg shadow-lg p-8" {...fadeInProps}>
+          <SectionHeader icon={<Award />} title="Certifications" />
+          <TimelineItem
+            title="Walmart’s Advanced Software Engineering Job Simulation"
+            subtitle="Forage"
+            time="Sep 2024"
+          />
+          <TimelineItem
+            title="J.P. Morgan Software Engineering Virtual Experience"
+            subtitle="Forage"
+            time="Jul 2024"
+          />
         </motion.div>
+      </div>
     </motion.section>
   );
+};
+
+// Reusable Subcomponents
+const SectionHeader = ({ icon, title }: { icon: React.ReactNode; title: string }) => (
+  <div className="flex items-center mb-6">
+    <div className="text-header mr-3">{icon}</div>
+    <h2 className="text-2xl font-bold">{title}</h2>
+  </div>
+);
+
+const TimelineItem = ({
+  title,
+  subtitle,
+  location,
+  time,
+  details = [],
+}: {
+  title: string;
+  subtitle?: string;
+  location?: string;
+  time: string;
+  details?: string[];
+}) => (
+  <div className="border-l-2 border-gray-200 pl-5 ml-3 relative space-y-2 mb-8">
+    <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header" />
+    <h3 className="text-xl font-bold">{title}</h3>
+    {subtitle && <p className="text-gray-700">{subtitle}</p>}
+    {location && <p className="text-gray-500">{location}</p>}
+    <p className="text-gray-600">{time}</p>
+    {details.length > 0 && (
+      <ul className="list-disc pl-5 space-y-1 text-gray-600">
+        {details.map((d, idx) => (
+          <li key={idx}>{d}</li>
+        ))}
+      </ul>
+    )}
+  </div>
+);
+
+const fadeInProps = {
+  initial: { opacity: 0, y: 40 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: 'easeOut' },
+  viewport: { once: true, amount: 0.2 },
 };
 
 export default Resume;

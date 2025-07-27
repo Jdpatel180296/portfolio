@@ -36,7 +36,7 @@ const Home: React.FC<HomeProps> = ({ id }) => {
             </div>
             
             <p className="text-gray-700 mb-8 text-3xl sm:text-2xl">
-              Experienced software engineer with 5+ years of experience in developing scalable web applications and REST APIs using Node.js and Express.js. Proficient in distributed computing, data structures and algorithms, and AI, with hands-on expertise in Python and machine learning. Strong background in SDLC, Agile, and continuous integration. Currently pursuing a master's in Computer Science, focused on AI and data analysis. Eager to contribute to cutting-edge projects that push technological boundaries and impact millions of users globally.
+              Experienced software engineer with over 5 years of hands-on expertise in building secure, high-performance web applications and RESTful APIs using Node.js, Express.js, and MongoDB. Proficient in developing scalable backend systems with JWT-based authentication, Redis caching, and real-time integrations like Razorpay and Firebase. Currently pursuing a Master’s in Computer Science at California State University, Los Angeles, specializing in AI and data science. Led research and projects in NLP (LLMs), deep learning (EfficientNet, ResNet), and predictive modeling (XGBoost, CatBoost), achieving industry-grade performance benchmarks. Passionate about creating intelligent systems that drive real-world impact at scale through innovation and performance.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-6">

@@ -8,7 +8,7 @@ const experiences = [
         company: 'California State University',
         location: 'Los Angeles, CA',
         period: 'Feb 2025 – Present',
-        description: 'Contributed in research on LLM to find cosine similarity with 90% accuracy.',
+        description: 'Engineered full-stack pipeline to analyze human vs. AI-generated text. Developed cosine similarity backend with 90% accuracy and automated CSV dataset generation for large-scale NLP research.',
         icon: _jsx(Code, { className: "w-16 h-16 text-header" }),
     },
     {
@@ -16,15 +16,15 @@ const experiences = [
         company: 'Alphaved Pvt Ltd',
         location: 'Surat, Gujarat, India',
         period: 'Jun 2020 – Jul 2023',
-        description: 'Engineered secure, optimized backend APIs with JWT, Redis caching, and Razorpay integration, reducing unauthorized access by 70% and increasing page speed by 40%.',
+        description: 'Developed secure APIs using Node.js and Express with JWT-based access control. Boosted system performance by 40% using Redis caching, lazy loading, and server-side pagination. Integrated Razorpay for real-time payments, cutting errors by 60%.',
         icon: _jsx(Code, { className: "w-16 h-16 text-header" }),
     },
     {
         title: 'Junior Software Developer',
-        company: 'WebcodeZ Infoway',
+        company: 'Webcodez Infoway',
         location: 'Rajkot, Gujarat, India',
         period: 'Feb 2018 – May 2020',
-        description: 'Improved data retrieval by 25% using MongoDB and Node.js, reduced bug-related tickets by 15% through effective debugging and code review practices.',
+        description: 'Built RESTful APIs for Angel Cineworld using Node.js and MongoDB, improving data retrieval by 25%. Participated in code reviews and bug fixing, reducing support tickets by 15%.',
         icon: _jsx(Code, { className: "w-16 h-16 text-header" }),
     },
     {
@@ -32,7 +32,7 @@ const experiences = [
         company: 'Aisomex Pvt. Ltd.',
         location: 'Rajkot, Gujarat, India',
         period: 'Jun 2016 – Dec 2016',
-        description: 'Built a dual-role user system and optimized image upload flow, improving user-task matching by 50% and upload efficiency by 60%.',
+        description: 'Designed dual-role user system with real-time Firebase chat. Optimized Android image uploads with compression and resizing, improving speed by 50% and reducing crashes on low-end devices.',
         icon: _jsx(Smartphone, { className: "w-16 h-16 text-header" }),
     },
 ];
