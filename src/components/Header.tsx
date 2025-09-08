@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from './ui/button';
+import {  motion } from 'framer-motion';
 
 interface HeaderProps {
   activeSection: string;
@@ -78,15 +79,59 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
             showMobileMenu ? 'flex' : 'hidden'
           } md:flex opacity-100 md:opacity-100 visible md:visible absolute md:static top-full right-0 w-80 md:w-auto bg-header md:bg-transparent flex-col md:flex-row min-h-screen md:min-h-fit space-y-6 md:space-y-0 md:space-x-6 p-6 md:p-0 transition-all duration-300 z-[60] items-center`}
         >
-          {sections.map((section) => (
-            <Button
-              key={section}
-              onClick={() => handleLinkClick(section)}
-              className={`nav-link ${activeSection === section ? 'active-nav-link' : ''}`}
-            >
-              {section.charAt(0).toUpperCase() + section.slice(1)}
-            </Button>
-          ))}
+          {sections.map((section) => {
+            if (section === 'projects') {
+              return (
+                      <div key={section} className="relative group">
+                          <Button
+                                onClick={() => handleLinkClick('projects')}
+                                className={`nav-link ${activeSection === section ? 'active-nav-link' : ''}`}
+                          >
+                              Projects
+                          </Button>
+
+                {/* Animated Dropdown */}
+                 <motion.div
+                 initial={{ opacity: 0, y: -10 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -10 }}
+    transition={{ duration: 0.2 }}
+    className="absolute top-full left-0 mt-2 w-44 bg-white text-black rounded-lg shadow-lg z-50 flex-col hidden group-hover:flex hover:flex"
+  >
+    <button
+      className="px-4 py-2 hover:bg-gray-100 text-left"
+      onClick={() => handleLinkClick('projects')}
+    >
+      All Projects
+    </button>
+    <button
+      className="px-4 py-2 hover:bg-gray-100 text-left"
+      onClick={() => handleLinkClick('ai-projects')}
+    >
+      AI Projects
+    </button>
+    <button
+      className="px-4 py-2 hover:bg-gray-100 text-left"
+      onClick={() => handleLinkClick('web-projects')}
+    >
+      Web Projects
+    </button>
+  </motion.div>
+</div>
+
+              );
+            }
+
+            return (
+              <Button
+                key={section}
+                onClick={() => handleLinkClick(section)}
+                className={`nav-link ${activeSection === section ? 'active-nav-link' : ''}`}
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </Button>
+            );
+          })}
         </nav>
       </div>
     </header>

@@ -109,7 +109,7 @@ export default {
 				'fade-in-left': 'fade-in-left 0.7s ease-out',
 				'scale-in': 'scale-in 0.5s ease-out',
 				'float-image': 'float-image 4s ease-in-out infinite',
-				'smooth-page-transition': 'smooth-page-transition 0.8s cubic-bezier(0.22, 1, 0.36, 1)' // Custom timing function
+				'smooth-page-transition': 'smooth-page-transition 0.9s cubic-bezier(0.22, 1, 0.36, 1)' // Custom timing function
 			}
 		}
 	},

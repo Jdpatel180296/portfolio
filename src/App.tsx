@@ -9,6 +9,8 @@ import Resume from './pages/Resume';
 import Contact from './pages/Contact';
 import { motion } from 'framer-motion';
 
+
+
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: { opacity: 1, y: 0 },
@@ -22,7 +24,7 @@ const AnimatedSection: React.FC<{ id: string; children: React.ReactNode }> = ({ 
     viewport={{ once: true, amount: 0.2 }}
     transition={{ duration: 0.6, ease: "easeOut" }}
     variants={sectionVariants}
-    className="py-1"
+    className="py-1 animation-smooth-page-transition"
   >
     {children}
   </motion.section>

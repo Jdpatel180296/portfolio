@@ -1,39 +1,23 @@
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import ExperienceCard from '../components/ExperienceCard';
 import { motion } from 'framer-motion';
-import { Code, Smartphone } from 'lucide-react';
+import { Code, Database } from 'lucide-react';
 const experiences = [
     {
-        title: 'Graduate Research Assistant',
-        company: 'California State University',
-        location: 'Los Angeles, CA',
-        period: 'Feb 2025 – Present',
-        description: 'Engineered full-stack pipeline to analyze human vs. AI-generated text. Developed cosine similarity backend with 90% accuracy and automated CSV dataset generation for large-scale NLP research.',
+        title: 'Software Developer II',
+        company: 'United Health (Contract)',
+        location: 'USA',
+        period: 'Jan 2025 – Present',
+        description: 'Redesigned backend healthcare SDK integrations with Java 17 & Spring Boot microservices, improving system throughput by 2.3x. Built patient-facing React apps, reducing missed telehealth consultations by 22%. Engineered CI/CD pipelines with Jenkins, GitHub Actions, Docker, Kubernetes, and Terraform, cutting release cycles from 3 weeks to 4 days. Secured 1M+ patient records with HIPAA/GDPR-compliant OAuth2/JWT authentication. Migrated healthcare services to AWS, supporting 250K+ concurrent users and reducing infrastructure costs by 18%.',
         icon: _jsx(Code, { className: "w-16 h-16 text-header" }),
     },
     {
-        title: 'Software Developer',
-        company: 'Alphaved Pvt Ltd',
-        location: 'Surat, Gujarat, India',
-        period: 'Jun 2020 – Jul 2023',
-        description: 'Developed secure APIs using Node.js and Express with JWT-based access control. Boosted system performance by 40% using Redis caching, lazy loading, and server-side pagination. Integrated Razorpay for real-time payments, cutting errors by 60%.',
-        icon: _jsx(Code, { className: "w-16 h-16 text-header" }),
-    },
-    {
-        title: 'Junior Software Developer',
-        company: 'Webcodez Infoway',
-        location: 'Rajkot, Gujarat, India',
-        period: 'Feb 2018 – May 2020',
-        description: 'Built RESTful APIs for Angel Cineworld using Node.js and MongoDB, improving data retrieval by 25%. Participated in code reviews and bug fixing, reducing support tickets by 15%.',
-        icon: _jsx(Code, { className: "w-16 h-16 text-header" }),
-    },
-    {
-        title: 'Intern – Junior Programmer Trainee',
-        company: 'Aisomex Pvt. Ltd.',
-        location: 'Rajkot, Gujarat, India',
-        period: 'Jun 2016 – Dec 2016',
-        description: 'Designed dual-role user system with real-time Firebase chat. Optimized Android image uploads with compression and resizing, improving speed by 50% and reducing crashes on low-end devices.',
-        icon: _jsx(Smartphone, { className: "w-16 h-16 text-header" }),
+        title: 'Senior Software Engineer',
+        company: 'Cognitive',
+        location: 'India',
+        period: 'Sep 2017 – Jul 2023',
+        description: 'Designed scalable payment settlement platform (80K+ daily transactions) with Java 17, Spring Boot, and Kafka. Built responsive React.js portals reducing service queries by 18%. Optimized PostgreSQL + Redis, cutting loan approval times from 90s to 12s. Automated deployments with Docker, Kubernetes, Terraform, reducing rollbacks by 35%. Developed fraud detection with Kafka + ML, blocking 1,500+ suspicious transactions monthly. Delivered treasury dashboards with Next.js, GraphQL, and D3.js, improving reconciliation by 40%.',
+        icon: _jsx(Database, { className: "w-16 h-16 text-header" }),
     },
 ];
 const Experience = ({ id }) => {

@@ -17,6 +17,7 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
       viewport={{ once: true, amount: 0.2 }}
     >
       <div className="max-w-4xl mx-auto">
+        {/* Header */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: -20 }}
@@ -25,9 +26,12 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
           viewport={{ once: true }}
         >
           <h1 className="section-title">Resume</h1>
-          <p className="text-gray-600 mt-4">My educational background and professional experience</p>
+          <p className="text-gray-600 mt-4">
+            My educational background, skills, and professional experience
+          </p>
         </motion.div>
 
+        {/* Download Resume */}
         <div className="flex justify-center mb-10">
           <a href="/Resume.pdf" className="btn" target="_blank">
             <Download className="w-4 h-4 mr-2" />
@@ -35,90 +39,70 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
           </a>
         </div>
 
-        {/* Education Section */}
+        {/* Education */}
         <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" {...fadeInProps}>
           <SectionHeader icon={<GraduationCap />} title="Education" />
           <TimelineItem
-            title="Master's in Computer Science"
+            title="Master of Science in Computer Science"
             subtitle="California State University, Los Angeles"
-            location="Los Angeles, California"
+            location="Los Angeles, CA"
             time="Aug 2023 – May 2025"
-            details={["GPA: 3.89"]}
+            details={["GPA: 3.89/4"]}
           />
           <TimelineItem
-            title="Bachelor of Computer Engineering"
+            title="Bachelor of Engineering in Computer Engineering"
             subtitle="Gujarat Technological University"
             location="Gujarat, India"
             time="Aug 2013 – Jun 2017"
-            details={["GPA: 3.44"]}
+            details={["GPA: 3.44/4"]}
           />
         </motion.div>
 
-        {/* Coursework Section */}
-        <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" {...fadeInProps}>
-          <SectionHeader icon={<GraduationCap />} title="Coursework" />
-          <p className="text-gray-600">
-            Advanced Web Development, Algorithms, Advanced Functional Programming, Advanced AI, Data Science,
-            Advanced Data Science, Advanced Software Engineering
-          </p>
-        </motion.div>
-
-        {/* Skills Section */}
+        {/* Skills */}
         <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" {...fadeInProps}>
           <SectionHeader icon={<Trophy />} title="Skills" />
           <p className="text-gray-600">
-            <strong>Languages:</strong> Python, Java, JavaScript, SQL, HTML/CSS<br />
-            <strong>Tools/Libraries:</strong> Pandas, NumPy, Scikit-learn, TensorFlow, Matplotlib<br />
-            <strong>Frameworks:</strong> Node.js, Express.js, Spring Boot, Vue.js, React<br />
-            <strong>Database:</strong> MongoDB, Firebase, SQL<br />
-            <strong>Other:</strong> Git, Redis, JIRA, Convex, Vercel
+            <strong>Backend & Frameworks:</strong> Java 17, Spring Boot, Hibernate, Node.js, Express.js, GraphQL, Microservices<br />
+            <strong>Frontend:</strong> React.js, Next.js, TypeScript, Angular, Tailwind, Material UI<br />
+            <strong>Databases:</strong> PostgreSQL, MySQL, MongoDB, DynamoDB, Redis, Cassandra<br />
+            <strong>Cloud & DevOps:</strong> AWS (EC2, S3, RDS, Lambda), Azure (App Services, AKS), Docker, Kubernetes, Terraform, Jenkins, GitHub Actions<br />
+            <strong>Security & APIs:</strong> Spring Security, OAuth2, JWT, Swagger/OpenAPI, HIPAA/GDPR<br />
+            <strong>Testing:</strong> JUnit, Mockito, Selenium, Cypress, Postman, Performance Testing
           </p>
         </motion.div>
 
-        {/* Work Experience Section */}
+        {/* Work Experience */}
         <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" {...fadeInProps}>
           <SectionHeader icon={<Briefcase />} title="Work Experience" />
           <TimelineItem
-            title="Graduate Research Assistant"
-            subtitle="California State University"
-            time="Feb 2025 – Present"
+            title="Software Developer II"
+            subtitle="United Health (Contract)"
+            location="USA"
+            time="Jan 2025 – Present"
             details={[
-              "Developed front-end/backend pipeline to analyze human vs. AI-generated text.",
-              "Engineered cosine similarity backend with 90% accuracy.",
-              "Automated conversion to structured CSV datasets.",
+              "Redesigned healthcare backend services with Java 17 & Spring Boot microservices, boosting throughput 2.3x.",
+              "Built React.js/TypeScript apps improving telehealth workflows, reducing missed consultations by 22%.",
+              "Optimized APIs with GraphQL + Redis caching, cutting latency from 1.9s to 400ms.",
+              "Engineered CI/CD pipelines with Jenkins, GitHub Actions, Docker, and Kubernetes, reducing release cycles from 3 weeks to 4 days.",
+              "Secured 1M+ patient records with HIPAA/GDPR-compliant Spring Security + OAuth2/JWT.",
             ]}
           />
           <TimelineItem
-            title="Software Developer"
-            subtitle="Alphaved Pvt Ltd | Surat, Gujarat, India"
-            time="Jun 2020 – Jul 2023"
+            title="Senior Software Engineer"
+            subtitle="Cognitive"
+            location="India"
+            time="Sep 2017 – Jul 2023"
             details={[
-              "Built secure backend APIs with JWT authentication and access control.",
-              "Optimized system using Redis, lazy loading, and server-side pagination.",
-              "Integrated Razorpay for real-time secure payments with failure handling.",
-            ]}
-          />
-          <TimelineItem
-            title="Junior Software Developer"
-            subtitle="Webcodez Infoway | Rajkot, Gujarat, India"
-            time="Feb 2018 – May 2020"
-            details={[
-              "Built Node.js APIs for Angel Cineworld project with MongoDB integration.",
-              "Reduced support tickets by 15% through code maintenance and debugging.",
-            ]}
-          />
-          <TimelineItem
-            title="Intern – Junior Programmer Trainee"
-            subtitle="Aisomex Pvt. Ltd. | Rajkot, Gujarat, India"
-            time="Jun 2016 – Dec 2016"
-            details={[
-              "Designed dual-role user system with Firebase-based chat.",
-              "Optimized Android image uploads, improving stability by 50%.",
+              "Designed microservices-based payment settlement system (80K+ daily transactions) with Spring Boot & Kafka.",
+              "Built React.js portals reducing customer queries by 18% and increasing engagement.",
+              "Cut loan approval times from 90s to 12s via PostgreSQL optimization & Redis caching.",
+              "Automated CI/CD with Docker, Kubernetes, Terraform, reducing rollbacks by 35%.",
+              "Enhanced fraud detection with Kafka + ML, blocking 1,500+ fraudulent transactions monthly.",
             ]}
           />
         </motion.div>
 
-        {/* Projects Section */}
+        {/* Projects (kept class projects as requested) */}
         <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" {...fadeInProps}>
           <SectionHeader icon={<Trophy />} title="Projects" />
           <TimelineItem
@@ -155,11 +139,11 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
           />
         </motion.div>
 
-        {/* Certifications Section */}
+        {/* Certifications */}
         <motion.div className="bg-section1 rounded-lg shadow-lg p-8" {...fadeInProps}>
           <SectionHeader icon={<Award />} title="Certifications" />
           <TimelineItem
-            title="Walmart’s Advanced Software Engineering Job Simulation"
+            title="Walmart Advanced Software Engineering Simulation"
             subtitle="Forage"
             time="Sep 2024"
           />
@@ -174,7 +158,7 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
   );
 };
 
-// Reusable Subcomponents
+// Subcomponents
 const SectionHeader = ({ icon, title }: { icon: React.ReactNode; title: string }) => (
   <div className="flex items-center mb-6">
     <div className="text-header mr-3">{icon}</div>

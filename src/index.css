@@ -150,28 +150,55 @@
     transform: scale(1.2) translateY(-10px);
   }
 
-
-
   .nav-link {
-    @apply relative text-white text-lg font-medium capitalize transition-colors duration-300 hover:text-gray-300;
+    position: relative;
+    color: white;
+    font-size: 1.125rem;
+    /* text-lg */
+    font-weight: 500;
+    /* font-medium */
+    text-transform: capitalize;
+    transition: color 0.3s;
+  }
+
+  .nav-link:hover {
+    color: #d1d5db;
+    /* hover:text-gray-300 */
   }
 
   .nav-link::after {
     content: '';
-    @apply absolute w-full scale-x-0 h-0.5 bottom-0 left-0 bg-white origin-bottom-right transition-transform duration-500;
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.5s;
   }
 
   .nav-link:hover::after {
-    @apply scale-x-100 origin-bottom-left;
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 
   .active-nav-link {
-    @apply text-white font-bold;
+    color: white;
+    font-weight: bold;
   }
 
   .active-nav-link::after {
-    @apply scale-x-100 origin-bottom-left bg-white;
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    background-color: white;
   }
+
+  .dropdown-delay {
+    transition-delay: 500ms;
+  }
+
 
   .social-icon {
     @apply inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-header transition-all duration-300 text-header bg-transparent hover:bg-header hover:text-white hover:border-transparent transform hover:scale-110;
