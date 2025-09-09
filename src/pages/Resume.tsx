@@ -40,8 +40,12 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
         </div>
 
         {/* Education */}
-        <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" {...fadeInProps}>
-          <SectionHeader icon={<GraduationCap />} title="Education" />
+        <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" 
+                    initial={fadeInProps.initial}
+                    whileInView={fadeInProps.whileInView}
+                    transition={fadeInProps.transition}
+                    viewport={fadeInProps.viewport}>
+          <SectionHeader icon={GraduationCap} title="Education" />
           <TimelineItem
             title="Master of Science in Computer Science"
             subtitle="California State University, Los Angeles"
@@ -59,8 +63,12 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
         </motion.div>
 
         {/* Skills */}
-        <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" {...fadeInProps}>
-          <SectionHeader icon={<Trophy />} title="Skills" />
+        <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" 
+                    initial={fadeInProps.initial}
+                    whileInView={fadeInProps.whileInView}
+                    transition={fadeInProps.transition}
+                    viewport={fadeInProps.viewport}>
+          <SectionHeader icon={Trophy} title="Skills" />
           <p className="text-gray-600">
             <strong>Backend & Frameworks:</strong> Java 17, Spring Boot, Hibernate, Node.js, Express.js, GraphQL, Microservices<br />
             <strong>Frontend:</strong> React.js, Next.js, TypeScript, Angular, Tailwind, Material UI<br />
@@ -72,8 +80,12 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
         </motion.div>
 
         {/* Work Experience */}
-        <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" {...fadeInProps}>
-          <SectionHeader icon={<Briefcase />} title="Work Experience" />
+        <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" 
+                    initial={fadeInProps.initial}
+                    whileInView={fadeInProps.whileInView}
+                    transition={fadeInProps.transition}
+                    viewport={fadeInProps.viewport}>
+          <SectionHeader icon={Briefcase} title="Work Experience" />
           <TimelineItem
             title="Software Developer II"
             subtitle="United Health (Contract)"
@@ -103,8 +115,12 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
         </motion.div>
 
         {/* Projects (kept class projects as requested) */}
-        <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" {...fadeInProps}>
-          <SectionHeader icon={<Trophy />} title="Projects" />
+        <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" 
+                    initial={fadeInProps.initial}
+                    whileInView={fadeInProps.whileInView}
+                    transition={fadeInProps.transition}
+                    viewport={fadeInProps.viewport}>
+          <SectionHeader icon={Trophy} title="Projects" />
           <TimelineItem
             title="Early Skin Cancer Detection"
             time="Jan 2025 – May 2025"
@@ -140,8 +156,12 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
         </motion.div>
 
         {/* Certifications */}
-        <motion.div className="bg-section1 rounded-lg shadow-lg p-8" {...fadeInProps}>
-          <SectionHeader icon={<Award />} title="Certifications" />
+        <motion.div className="bg-section1 rounded-lg shadow-lg p-8" 
+                    initial={fadeInProps.initial}
+                    whileInView={fadeInProps.whileInView}
+                    transition={fadeInProps.transition}
+                    viewport={fadeInProps.viewport}>
+          <SectionHeader icon={Award} title="Certifications" />
           <TimelineItem
             title="Walmart Advanced Software Engineering Simulation"
             subtitle="Forage"
@@ -159,12 +179,13 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
 };
 
 // Subcomponents
-const SectionHeader = ({ icon, title }: { icon: React.ReactNode; title: string }) => (
+const SectionHeader = ({ icon: Icon, title }: { icon: React.ElementType; title: string }) => (
   <div className="flex items-center mb-6">
-    <div className="text-header mr-3">{icon}</div>
+    <Icon className="text-header mr-3 w-6 h-6" />
     <h2 className="text-2xl font-bold">{title}</h2>
   </div>
 );
+
 
 const TimelineItem = ({
   title,

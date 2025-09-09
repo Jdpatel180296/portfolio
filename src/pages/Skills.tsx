@@ -97,7 +97,7 @@ const Skills: React.FC<SkillsProps> = ({ id }) => {
               transition={{ duration: 0.7, delay: idx * 0.3 }}
             >
               <h2 className="text-3xl font-bold mb-8 border-b pb-3">{group.title}</h2>
-              <div className={`grid grid-cols-2 sm:grid-col-3 md:grid-cols-${group.title === "Cloud & DevOps" || group.title === "Testing" ? "6" : "3"} gap-10`}>
+              <div className={`grid grid-cols-2 md:grid-cols-${group.title === "Cloud & DevOps" || group.title === "Testing" ? "6" : "3"} gap-10`}>
                 {group.skills.map((skill, index) => (
                   <SkillIcon key={index} iconSrc={skill.iconSrc} name={skill.name} />
                 ))}

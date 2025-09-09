@@ -214,7 +214,7 @@
   }
 
   .section-title {
-    @apply text-4xl sm:text-6xl md:text-7xl font-bold overflow-visible mb-12 relative inline-block;
+    @apply text-6xl sm:text-7xl font-bold overflow-visible mb-12 relative inline-block;
   }
 
 
