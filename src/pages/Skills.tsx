@@ -90,14 +90,14 @@ const Skills: React.FC<SkillsProps> = ({ id }) => {
           {skillsData.map((group, idx) => (
             <motion.div
               key={idx}
-              className={`bg-white rounded-lg shadow-lg p-10 ${group.title === "Cloud & DevOps" || group.title === "Testing" ? "md:col-span-2" : ""}`}
+              className={`bg-white rounded-lg shadow-lg p-10 md:col-span-2`}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: idx * 0.3 }}
             >
               <h2 className="text-3xl font-bold mb-8 border-b pb-3">{group.title}</h2>
-              <div className={`grid grid-cols-2 md:grid-cols-${group.title === "Cloud & DevOps" || group.title === "Testing" ? "6" : "3"} gap-10`}>
+              <div className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6`}>
                 {group.skills.map((skill, index) => (
                   <SkillIcon key={index} iconSrc={skill.iconSrc} name={skill.name} />
                 ))}

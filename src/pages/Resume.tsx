@@ -1,10 +1,24 @@
-import React from 'react';
-import { Download, Award, Briefcase, GraduationCap, Trophy } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React from "react";
+import {
+  Download,
+  Award,
+  Briefcase,
+  GraduationCap,
+  Trophy,
+} from "lucide-react";
+import { motion } from "framer-motion";
 
 interface ResumeProps {
   id?: string;
 }
+
+// 👇 Moved up
+const fadeInProps = {
+  initial: { opacity: 0, y: 40 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: "easeOut" },
+  viewport: { once: true, amount: 0.2 },
+};
 
 const Resume: React.FC<ResumeProps> = ({ id }) => {
   return (
@@ -12,39 +26,39 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
       id={id}
       className="bg-section2 min-h-screen py-16 px-6 flex-col"
       initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: 'easeOut' }}
-      viewport={{ once: true, amount: 0.2 }}
+      animate={{ opacity: 1, y: 0 }} // ✅ safer for Safari
+      transition={{ duration: 0.7, ease: "easeOut" }}
     >
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          viewport={{ once: true }}
         >
           <h1 className="section-title">Resume</h1>
           <p className="text-gray-600 mt-4">
             My educational background, skills, and professional experience
           </p>
         </motion.div>
-
         {/* Download Resume */}
         <div className="flex justify-center mb-10">
-          <a href="/Resume.pdf" className="btn" target="_blank">
+          <a
+            href="/Resume.pdf"
+            className="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Download className="w-4 h-4 mr-2" />
             Download Resume
           </a>
         </div>
-
         {/* Education */}
-        <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" 
-                    initial={fadeInProps.initial}
-                    whileInView={fadeInProps.whileInView}
-                    transition={fadeInProps.transition}
-                    viewport={fadeInProps.viewport}>
+        <motion.div
+          className="bg-section1 rounded-lg shadow-lg p-8 mb-10"
+          {...fadeInProps}
+        >
           <SectionHeader icon={GraduationCap} title="Education" />
           <TimelineItem
             title="Master of Science in Computer Science"
@@ -53,38 +67,40 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
             time="Aug 2023 – May 2025"
             details={["GPA: 3.89/4"]}
           />
-          <TimelineItem
-            title="Bachelor of Engineering in Computer Engineering"
-            subtitle="Gujarat Technological University"
-            location="Gujarat, India"
-            time="Aug 2013 – Jun 2017"
-            details={["GPA: 3.44/4"]}
-          />
         </motion.div>
-
         {/* Skills */}
-        <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" 
-                    initial={fadeInProps.initial}
-                    whileInView={fadeInProps.whileInView}
-                    transition={fadeInProps.transition}
-                    viewport={fadeInProps.viewport}>
+        <motion.div
+          className="bg-section1 rounded-lg shadow-lg p-8 mb-10"
+          {...fadeInProps}
+        >
           <SectionHeader icon={Trophy} title="Skills" />
           <p className="text-gray-600">
-            <strong>Backend & Frameworks:</strong> Java 17, Spring Boot, Hibernate, Node.js, Express.js, GraphQL, Microservices<br />
-            <strong>Frontend:</strong> React.js, Next.js, TypeScript, Angular, Tailwind, Material UI<br />
-            <strong>Databases:</strong> PostgreSQL, MySQL, MongoDB, DynamoDB, Redis, Cassandra<br />
-            <strong>Cloud & DevOps:</strong> AWS (EC2, S3, RDS, Lambda), Azure (App Services, AKS), Docker, Kubernetes, Terraform, Jenkins, GitHub Actions<br />
-            <strong>Security & APIs:</strong> Spring Security, OAuth2, JWT, Swagger/OpenAPI, HIPAA/GDPR<br />
-            <strong>Testing:</strong> JUnit, Mockito, Selenium, Cypress, Postman, Performance Testing
+            <strong>Backend & Frameworks:</strong>
+            Java 17, Spring Boot, Hibernate, Node.js, Express.js, GraphQL,
+            Microservices
+            <br />
+            <strong>Frontend:</strong>
+            React.js, Next.js, TypeScript, Angular, Tailwind, Material UI
+            <br />
+            <strong>Databases:</strong>
+            PostgreSQL, MySQL, MongoDB, DynamoDB, Redis, Cassandra
+            <br />
+            <strong>Cloud & DevOps:</strong>
+            AWS (EC2, S3, RDS, Lambda), Azure (App Services, AKS), Docker,
+            Kubernetes, Terraform, Jenkins, GitHub Actions
+            <br />
+            <strong>Security & APIs:</strong>
+            Spring Security, OAuth2, JWT, Swagger/OpenAPI, HIPAA/GDPR
+            <br />
+            <strong>Testing:</strong>
+            JUnit, Mockito, Selenium, Cypress, Postman, Performance Testing{" "}
           </p>
         </motion.div>
-
         {/* Work Experience */}
-        <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" 
-                    initial={fadeInProps.initial}
-                    whileInView={fadeInProps.whileInView}
-                    transition={fadeInProps.transition}
-                    viewport={fadeInProps.viewport}>
+        <motion.div
+          className="bg-section1 rounded-lg shadow-lg p-8 mb-10"
+          {...fadeInProps}
+        >
           <SectionHeader icon={Briefcase} title="Work Experience" />
           <TimelineItem
             title="Software Developer II"
@@ -112,80 +128,43 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
               "Enhanced fraud detection with Kafka + ML, blocking 1,500+ fraudulent transactions monthly.",
             ]}
           />
+      
         </motion.div>
-
-        {/* Projects (kept class projects as requested) */}
-        <motion.div className="bg-section1 rounded-lg shadow-lg p-8 mb-10" 
-                    initial={fadeInProps.initial}
-                    whileInView={fadeInProps.whileInView}
-                    transition={fadeInProps.transition}
-                    viewport={fadeInProps.viewport}>
-          <SectionHeader icon={Trophy} title="Projects" />
-          <TimelineItem
-            title="Early Skin Cancer Detection"
-            time="Jan 2025 – May 2025"
-            details={[
-              "Developed DL pipeline using EfficientNet, ResNet, MobileNet with metadata fusion.",
-              "Achieved AUC of 92.9% using EfficientNetV2-B0.",
-            ]}
-          />
-          <TimelineItem
-            title="Amazon Employee Access Prediction"
-            time="Oct 2024 – Dec 2024"
-            details={[
-              "Built models with Logistic Regression, Random Forest, XGBoost, CatBoost (95.6% accuracy).",
-              "Evaluated models with AUC, precision, recall, F1-score.",
-            ]}
-          />
-          <TimelineItem
-            title="AI Town Simulation"
-            time="Oct 2023 – Dec 2023"
-            details={[
-              "Built GPT-4 based agent simulation with real-time backend (Convex).",
-              "Enabled dynamic memory-based conversations.",
-            ]}
-          />
-          <TimelineItem
-            title="Restaurant Application"
-            time="Sep 2023 – Nov 2023"
-            details={[
-              "React Native app with QR-based reservations and live revenue prediction.",
-              "Boosted search speed by 83% using binary search.",
-            ]}
-          />
-        </motion.div>
-
         {/* Certifications */}
-        <motion.div className="bg-section1 rounded-lg shadow-lg p-8" 
-                    initial={fadeInProps.initial}
-                    whileInView={fadeInProps.whileInView}
-                    transition={fadeInProps.transition}
-                    viewport={fadeInProps.viewport}>
-          <SectionHeader icon={Award} title="Certifications" />
+        <motion.div
+          className="bg-section1 rounded-lg shadow-lg p-8"
+          {...fadeInProps}
+        >
+          <SectionHeader icon={Award} title="Certifications" />{" "}
           <TimelineItem
             title="Walmart Advanced Software Engineering Simulation"
             subtitle="Forage"
             time="Sep 2024"
-          />
+          />{" "}
           <TimelineItem
             title="J.P. Morgan Software Engineering Virtual Experience"
             subtitle="Forage"
             time="Jul 2024"
           />
-        </motion.div>
+        </motion.div>{" "}
       </div>
     </motion.section>
   );
 };
 
 // Subcomponents
-const SectionHeader = ({ icon: Icon, title }: { icon: React.ElementType; title: string }) => (
+const SectionHeader = ({
+  icon: Icon,
+  title,
+}: {
+  icon: React.ElementType;
+  title: string;
+}) => (
   <div className="flex items-center mb-6">
     <Icon className="text-header mr-3 w-6 h-6" />
     <h2 className="text-2xl font-bold">{title}</h2>
   </div>
 );
-
 
 const TimelineItem = ({
   title,
@@ -206,7 +185,7 @@ const TimelineItem = ({
     {subtitle && <p className="text-gray-700">{subtitle}</p>}
     {location && <p className="text-gray-500">{location}</p>}
     <p className="text-gray-600">{time}</p>
-    {details.length > 0 && (
+    {Array.isArray(details) && details.length > 0 && (
       <ul className="list-disc pl-5 space-y-1 text-gray-600">
         {details.map((d, idx) => (
           <li key={idx}>{d}</li>
@@ -215,12 +194,5 @@ const TimelineItem = ({
     )}
   </div>
 );
-
-const fadeInProps = {
-  initial: { opacity: 0, y: 40 },
-  whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: 'easeOut' },
-  viewport: { once: true, amount: 0.2 },
-};
 
 export default Resume;
