@@ -62,13 +62,13 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
   };
 
   return (
-    <header className="bg-header py-5 px-6 sm:px-10 fixed w-full top-0 left-0 z-50 shadow-md">
+    <header className="backdrop-blur-md bg-gradient-to-r from-purple-600/90 via-pink-600/90 to-red-600/90 py-4 px-6 sm:px-10 fixed w-full top-0 left-0 z-50 shadow-2xl border-b border-white/20">
       <div className="w-full flex justify-between items-center">
         <Button
           onClick={() => handleLinkClick("home")}
-          className="text-white text-3xl font-bold cursor-pointer transition-transform hover:scale-105"
+          className="text-white text-2xl sm:text-3xl font-bold cursor-pointer transition-all duration-300 hover:scale-105 hover:text-yellow-300 flex items-center gap-2"
         >
-          Jaydeep Gondaliya
+          <span className="hidden sm:inline">✨</span> Jaydeep Gondaliya
         </Button>
 
         <Button onClick={toggleMobileMenu} className="md:hidden">

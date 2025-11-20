@@ -19,12 +19,12 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
 }) => {
   return (
     <motion.div
-      className="bg-white rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-2xl h-full"
+      className="backdrop-blur-sm bg-white/50 border border-white/30 rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl h-full"
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       viewport={{ once: true }}
-      whileHover={{ scale: 1.03 }}
+      whileHover={{ scale: 1.05, y: -5 }}
     >
       <div className="relative h-48 overflow-hidden">
         <a href={image} target="_blank" rel="noopener noreferrer">
@@ -37,7 +37,9 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
       </div>
 
       <div className="p-6">
-        <h3 className="text-2xl font-bold mb-2 text-header">{title}</h3>
+        <h3 className="text-2xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600">
+          {title}
+        </h3>
 
         <div className="flex items-center text-gray-600 mb-2">
           <Calendar className="w-5 h-5 mr-2" />

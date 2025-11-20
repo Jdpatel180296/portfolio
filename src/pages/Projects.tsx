@@ -1,6 +1,7 @@
 import React from "react";
 import ProjectCard from "../components/ProjectCard";
 import { motion } from "framer-motion";
+import { Rocket } from "lucide-react";
 
 interface ProjectsProps {
   id?: string;
@@ -75,40 +76,54 @@ const Projects: React.FC<ProjectsProps> = ({ id }) => {
   return (
     <motion.section
       id={id}
-      className="min-h-screen bg-section2 py-20 px-3 flex flex-col justify-center"
+      className="min-h-screen relative py-20 px-3 flex flex-col justify-center overflow-hidden"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
     >
-      <motion.div
-        className="text-center mb-16"
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        viewport={{ once: true }}
-      >
-        <h1 className="section-title">
-          My <span className="text-header">Projects</span>
-        </h1>
-        <p className="text-gray-700 mt-4 text-lg">
-          Some of the projects I've worked on
-        </p>
-      </motion.div>
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-100 via-pink-50 to-orange-100"></div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto">
-        {projects.map((project, index) => (
-          <ProjectCard
-            key={index}
-            title={project.title}
-            period={project.period}
-            description={project.description}
-            technologies={project.technologies}
-            liveLink={project.liveLink}
-            githubLink={project.githubLink}
-            image={project.image}
-          />
-        ))}
+      {/* Animated Shapes */}
+      <div className="absolute top-20 right-10 w-64 h-64 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl opacity-20 animate-blob"></div>
+      <div className="absolute bottom-20 left-10 w-64 h-64 bg-pink-300 rounded-full mix-blend-multiply filter blur-2xl opacity-20 animate-blob animation-delay-2000"></div>
+
+      <div className="relative z-10">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <Rocket className="w-10 h-10 text-purple-600" />
+            <h1 className="text-5xl sm:text-6xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              My Projects
+            </h1>
+          </div>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            Innovative solutions combining{" "}
+            <strong>AI, Full-Stack Development</strong>, and{" "}
+            <strong>Cloud Technologies</strong>
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              title={project.title}
+              period={project.period}
+              description={project.description}
+              technologies={project.technologies}
+              liveLink={project.liveLink}
+              githubLink={project.githubLink}
+              image={project.image}
+            />
+          ))}
+        </div>
       </div>
     </motion.section>
   );

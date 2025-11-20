@@ -5,6 +5,7 @@ import { LucideIcon } from "lucide-react";
 interface SkillIconProps {
   icon: LucideIcon;
   name: string;
+  color?: string;
 }
 
 const iconVariants = {
@@ -12,7 +13,11 @@ const iconVariants = {
   visible: { opacity: 1, scale: 1 },
 };
 
-const SkillIcon: React.FC<SkillIconProps> = ({ icon: Icon, name }) => {
+const SkillIcon: React.FC<SkillIconProps> = ({
+  icon: Icon,
+  name,
+  color = "text-gray-700",
+}) => {
   return (
     <motion.div
       className="icon-container flex flex-col items-center"
@@ -24,7 +29,7 @@ const SkillIcon: React.FC<SkillIconProps> = ({ icon: Icon, name }) => {
       whileHover={{ scale: 1.1 }}
     >
       <div className="skill-icon mb-3">
-        <Icon className="w-10 h-10" />
+        <Icon className={`w-10 h-10 ${color}`} />
       </div>
       <span className="text-lg font-medium text-center text-gray-800">
         {name}
