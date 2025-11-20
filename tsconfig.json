@@ -20,11 +20,12 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     /* Module Resolution */
-    "moduleResolution": "bundler", // Or "node" if you have issues
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true, // Very important for Vite!
+    "noEmit": true,
     /* Path Aliases */
+    "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "paths": {
       "@/*": [
