@@ -25,15 +25,14 @@
     "isolatedModules": true,
     "noEmit": true,
     /* Path Aliases */
-    "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "src/*"
+        "./src/*"
       ]
     }
   },
   "include": [
     "src"
-  ],
+  ]
 }
