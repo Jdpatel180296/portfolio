@@ -31,7 +31,7 @@ const SkillIcon: React.FC<SkillIconProps> = ({
       <div className="skill-icon mb-3">
         <Icon className={`w-10 h-10 ${color}`} />
       </div>
-      <span className="text-lg font-medium text-center text-gray-800">
+      <span className="text-lg font-medium text-center text-gray-800 dark:text-gray-100">
         {name}
       </span>
     </motion.div>

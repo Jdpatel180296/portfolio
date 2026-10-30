@@ -71,7 +71,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
 }) => {
   return (
     <motion.div
-      className="backdrop-blur-sm bg-white/40 border border-white/30 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 min-h-[480px] flex flex-col"
+      className="backdrop-blur-sm bg-white/40 dark:bg-gray-800/40 border border-white/30 dark:border-gray-700/30 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 min-h-[480px] flex flex-col"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -92,20 +92,22 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
       <h3 className="text-2xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
         {title}
       </h3>
-      <h4 className="text-xl font-semibold text-gray-800 mb-4">{company}</h4>
+      <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+        {company}
+      </h4>
 
-      <div className="flex flex-wrap gap-4 text-gray-600 mb-6">
-        <div className="flex items-center gap-2 px-3 py-1 bg-white/50 rounded-full">
-          <MapPin className="w-4 h-4 text-blue-600" />
+      <div className="flex flex-wrap gap-4 text-gray-600 dark:text-gray-300 mb-6">
+        <div className="flex items-center gap-2 px-3 py-1 bg-white/50 dark:bg-gray-700/50 rounded-full">
+          <MapPin className="w-4 h-4 text-blue-600 dark:text-blue-400" />
           <span className="text-sm font-medium">{location}</span>
         </div>
-        <div className="flex items-center gap-2 px-3 py-1 bg-white/50 rounded-full">
-          <Calendar className="w-4 h-4 text-purple-600" />
+        <div className="flex items-center gap-2 px-3 py-1 bg-white/50 dark:bg-gray-700/50 rounded-full">
+          <Calendar className="w-4 h-4 text-purple-600 dark:text-purple-400" />
           <span className="text-sm font-medium">{period}</span>
         </div>
       </div>
 
-      <p className="text-base text-gray-700 leading-relaxed flex-grow">
+      <p className="text-base text-gray-700 dark:text-gray-200 leading-relaxed flex-grow">
         {description}
       </p>
     </motion.div>

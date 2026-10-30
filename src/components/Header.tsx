@@ -62,15 +62,8 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
   };
 
   return (
-    <header className="backdrop-blur-md bg-gradient-to-r from-purple-600/90 via-pink-600/90 to-red-600/90 py-4 px-6 sm:px-10 fixed w-full top-0 left-0 z-50 shadow-2xl border-b border-white/20">
-      <div className="w-full flex justify-between items-center">
-        <Button
-          onClick={() => handleLinkClick("home")}
-          className="text-white text-2xl sm:text-3xl font-bold cursor-pointer transition-all duration-300 hover:scale-105 hover:text-yellow-300 flex items-center gap-2"
-        >
-          <span className="hidden sm:inline">✨</span> Jaydeep Gondaliya
-        </Button>
-
+    <header className="backdrop-blur-md bg-gradient-to-r from-purple-600/90 via-pink-600/90 to-red-600/90 dark:from-purple-800/90 dark:via-pink-800/90 dark:to-red-800/90 py-4 px-6 sm:px-10 fixed w-full top-0 left-0 z-50 shadow-2xl border-b border-white/20 dark:border-white/10">
+      <div className="w-full flex justify-end items-center">
         <Button onClick={toggleMobileMenu} className="md:hidden">
           <i
             className={`bx ${
@@ -82,7 +75,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
         <nav
           className={`${
             showMobileMenu ? "flex" : "hidden"
-          } md:flex opacity-100 md:opacity-100 visible md:visible absolute md:static top-full right-0 w-80 md:w-auto bg-header md:bg-transparent flex-col md:flex-row min-h-screen md:min-h-fit space-y-6 md:space-y-0 md:space-x-6 p-6 md:p-0 transition-all duration-300 z-[60] items-center`}
+          } md:flex opacity-100 md:opacity-100 visible md:visible absolute md:static top-full right-0 w-80 md:w-auto bg-header dark:bg-gray-800 md:bg-transparent flex-col md:flex-row min-h-screen md:min-h-fit space-y-6 md:space-y-0 md:space-x-6 p-6 md:p-0 transition-all duration-300 z-[60] items-center`}
         >
           {sections.map((section) => {
             if (section === "projects") {
@@ -104,22 +97,22 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
-                      className="w-44 bg-white text-black rounded-lg shadow-lg overflow-hidden"
+                      className="w-44 bg-white dark:bg-gray-800 text-black dark:text-white rounded-lg shadow-lg overflow-hidden"
                     >
                       <button
-                        className="w-full px-4 py-2 hover:bg-gray-100 text-left transition-colors"
+                        className="w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-left transition-colors"
                         onClick={() => handleLinkClick("projects")}
                       >
                         All Projects
                       </button>
                       <button
-                        className="w-full px-4 py-2 hover:bg-gray-100 text-left transition-colors"
+                        className="w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-left transition-colors"
                         onClick={() => handleLinkClick("ai-projects")}
                       >
                         AI Projects
                       </button>
                       <button
-                        className="w-full px-4 py-2 hover:bg-gray-100 text-left transition-colors"
+                        className="w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-left transition-colors"
                         onClick={() => handleLinkClick("web-projects")}
                       >
                         Web Projects

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Calendar, Link as LinkIcon, Github } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { Calendar, Link as LinkIcon, Github } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface ProjectCardProps {
   title: string;
@@ -23,11 +23,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <motion.div
-      className="project-card group bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl"
+      className="project-card group bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       {/* Consistent Image Wrapper */}
       <div className="relative h-56 overflow-hidden">
@@ -63,21 +63,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
 
       <div className="p-6">
-        <h3 className="text-2xl font-bold mb-1 text-header">{title}</h3>
-        <div className="flex items-center text-gray-500 text-sm mb-3">
+        <h3 className="text-2xl font-bold mb-1 text-header dark:text-purple-400">
+          {title}
+        </h3>
+        <div className="flex items-center text-gray-500 dark:text-gray-400 text-sm mb-3">
           <Calendar className="w-4 h-4 mr-2" />
           <span>{period}</span>
         </div>
 
-        <p className="text-gray-700 mb-4 text-base leading-relaxed">{description}</p>
+        <p className="text-gray-700 dark:text-gray-200 mb-4 text-base leading-relaxed">
+          {description}
+        </p>
 
         <div className="mb-2">
-          <h4 className="text-sm font-semibold text-gray-500 mb-1">Technologies</h4>
+          <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-1">
+            Technologies
+          </h4>
           <div className="flex flex-wrap gap-2">
             {technologies.map((tech, index) => (
               <span
                 key={index}
-                className="px-3 py-1 bg-skills text-sm text-gray-800 font-medium rounded-full"
+                className="px-3 py-1 bg-skills dark:bg-gray-700 text-sm text-gray-800 dark:text-gray-200 font-medium rounded-full"
               >
                 {tech}
               </span>

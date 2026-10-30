@@ -90,11 +90,11 @@ const Certificates: React.FC<CertificatesProps> = ({ id }) => {
       className="py-20 px-4 min-h-screen relative overflow-hidden"
     >
       {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50 animate-gradient-xy"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50 dark:from-gray-900 dark:via-purple-950 dark:to-indigo-950 animate-gradient-xy"></div>
 
       {/* Floating shapes */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-      <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div className="absolute top-20 left-10 w-72 h-72 bg-pink-300 dark:bg-pink-700 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10 animate-blob"></div>
+      <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-300 dark:bg-purple-700 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10 animate-blob animation-delay-2000"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Title */}
@@ -112,14 +112,14 @@ const Certificates: React.FC<CertificatesProps> = ({ id }) => {
             transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <Award className="w-12 h-12 text-pink-600" />
+            <Award className="w-12 h-12 text-pink-600 dark:text-pink-400" />
           </motion.div>
-          <h1 className="text-5xl sm:text-6xl font-bold mb-4">
+          <h1 className="text-5xl sm:text-6xl font-bold mb-4 dark:text-white">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600">
               Certificates
             </span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Professional certifications and achievements
           </p>
         </motion.div>

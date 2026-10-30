@@ -10,6 +10,15 @@ interface ProjectsProps {
 const Projects: React.FC<ProjectsProps> = ({ id }) => {
   const projects = [
     {
+      title: "Restaurant Mobile App (iOS & Android)",
+      period: "Sep 2023 - Nov 2023",
+      description:
+        "Cross-platform mobile app for iOS and Android with real-time menu updates, digital payments, order tracking, QR-based table booking, push notifications and live customer-traffic dashboards, synced across devices with Firestore.",
+      technologies: ["React Native", "Firebase", "JavaScript", "Node.js"],
+      githubLink: "https://github.com/Jdpatel180296/app",
+      image: "/photo/Restaurent_app.PNG",
+    },
+    {
       title: "Early Skin Cancer Detection",
       period: "Jan 2025 - May 2025",
       description:
@@ -53,15 +62,6 @@ const Projects: React.FC<ProjectsProps> = ({ id }) => {
       image: "/photo/AI_town.jpg",
     },
     {
-      title: "Restaurant Application",
-      period: "Sep 2023 - Nov 2023",
-      description:
-        "Mobile application for restaurant management with table reservation via QR codes and live traffic monitoring for revenue prediction.",
-      technologies: ["React Native", "Firebase", "JavaScript", "Node.js"],
-      githubLink: "https://github.com/Jdpatel180296/app",
-      image: "/photo/Restaurent_app.PNG",
-    },
-    {
       title: "E-Commerce Platform",
       period: "Jan 2022 - Apr 2022",
       description:
@@ -83,11 +83,11 @@ const Projects: React.FC<ProjectsProps> = ({ id }) => {
       viewport={{ once: true, amount: 0.2 }}
     >
       {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-100 via-pink-50 to-orange-100"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-100 via-pink-50 to-orange-100 dark:from-gray-900 dark:via-purple-950 dark:to-pink-950"></div>
 
       {/* Animated Shapes */}
-      <div className="absolute top-20 right-10 w-64 h-64 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl opacity-20 animate-blob"></div>
-      <div className="absolute bottom-20 left-10 w-64 h-64 bg-pink-300 rounded-full mix-blend-multiply filter blur-2xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div className="absolute top-20 right-10 w-64 h-64 bg-purple-300 dark:bg-purple-700 rounded-full mix-blend-multiply filter blur-2xl opacity-20 dark:opacity-10 animate-blob"></div>
+      <div className="absolute bottom-20 left-10 w-64 h-64 bg-pink-300 dark:bg-pink-700 rounded-full mix-blend-multiply filter blur-2xl opacity-20 dark:opacity-10 animate-blob animation-delay-2000"></div>
 
       <div className="relative z-10">
         <motion.div
@@ -98,14 +98,14 @@ const Projects: React.FC<ProjectsProps> = ({ id }) => {
           viewport={{ once: true }}
         >
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Rocket className="w-10 h-10 text-purple-600" />
+            <Rocket className="w-10 h-10 text-purple-600 dark:text-purple-400" />
             <h1 className="text-5xl sm:text-6xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
               My Projects
             </h1>
           </div>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
             Innovative solutions combining{" "}
-            <strong>AI, Full-Stack Development</strong>, and{" "}
+            <strong>Mobile, AI, Full-Stack Development</strong>, and{" "}
             <strong>Cloud Technologies</strong>
           </p>
         </motion.div>

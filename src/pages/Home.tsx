@@ -14,12 +14,12 @@ const Home: React.FC<HomeProps> = ({ id }) => {
       className="min-h-screen w-full relative px-4 py-16 flex items-center overflow-hidden"
     >
       {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 animate-gradient-xy"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-purple-950 dark:to-pink-950 animate-gradient-xy"></div>
 
       {/* Floating shapes */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-      <div className="absolute top-40 right-10 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-      <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+      <div className="absolute top-20 left-10 w-72 h-72 bg-purple-300 dark:bg-purple-700 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10 animate-blob"></div>
+      <div className="absolute top-40 right-10 w-72 h-72 bg-yellow-300 dark:bg-yellow-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10 animate-blob animation-delay-2000"></div>
+      <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 dark:bg-pink-700 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10 animate-blob animation-delay-4000"></div>
 
       <div className="w-full mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
         <motion.div
@@ -30,10 +30,10 @@ const Home: React.FC<HomeProps> = ({ id }) => {
         >
           <div className="relative">
             {/* Subtle gradient border ring */}
-            <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 opacity-75 blur-lg"></div>
+            <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 opacity-75 dark:opacity-50 blur-lg"></div>
 
             <motion.div
-              className="relative w-64 h-64 sm:w-96 sm:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl"
+              className="relative w-64 h-64 sm:w-96 sm:h-96 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-2xl"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
@@ -64,13 +64,13 @@ const Home: React.FC<HomeProps> = ({ id }) => {
         >
           <div className="space-y-4">
             <motion.div
-              className="flex items-center gap-2 text-purple-600 font-semibold text-lg justify-center md:justify-start"
+              className="flex items-center gap-2 text-purple-600 dark:text-purple-400 font-semibold text-lg justify-center md:justify-start"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
               <Code className="w-5 h-5" />
-              <span>Full Stack Developer</span>
+              <span>Full-Stack &amp; Mobile Developer</span>
             </motion.div>
 
             <motion.h1
@@ -83,7 +83,7 @@ const Home: React.FC<HomeProps> = ({ id }) => {
             </motion.h1>
 
             <motion.h2
-              className="text-3xl sm:text-4xl font-semibold text-gray-700"
+              className="text-3xl sm:text-4xl font-semibold text-gray-700 dark:text-gray-200"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
@@ -101,26 +101,27 @@ const Home: React.FC<HomeProps> = ({ id }) => {
           </div>
 
           <motion.div
-            className="backdrop-blur-sm bg-white/30 border border-white/20 rounded-2xl p-6 shadow-xl"
+            className="backdrop-blur-sm bg-white/30 dark:bg-gray-800/30 border border-white/20 dark:border-gray-700/30 rounded-2xl p-6 shadow-xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
           >
-            <p className="text-gray-700 text-lg leading-relaxed">
-              🚀 <strong>6+ years</strong> of expertise crafting{" "}
-              <strong>scalable, high-performance applications</strong>.
-              Specializing in <strong>Java, Spring Boot, microservices</strong>,
-              and <strong>React.js/Next.js</strong>.
+            <p className="text-gray-700 dark:text-gray-200 text-lg leading-relaxed">
+              📱 Full-stack and mobile developer building{" "}
+              <strong>web apps, mobile apps and the APIs behind them</strong>.
+              Shipped a cross-platform <strong>React Native</strong> app for
+              iOS &amp; Android, and now modernizing legacy websites into
+              full-stack platforms with <strong>mobile-ready REST APIs</strong>.
               <br />
               <br />
-              💡 Building <strong>secure, HIPAA/GDPR-compliant</strong> systems
-              with <strong>JWT/OAuth2</strong>. Expert in{" "}
-              <strong>PostgreSQL, MongoDB, Redis</strong>, and{" "}
-              <strong>cloud-native deployments</strong> (AWS & Azure).
+              💡 Strong backend in <strong>Node.js, Java &amp; Spring Boot</strong>,{" "}
+              <strong>PostgreSQL, MongoDB, Redis</strong>, and cloud deployments
+              on <strong>AWS &amp; Azure</strong>. Currently growing into native{" "}
+              <strong>iOS development with Swift, UIKit &amp; Core Data</strong>.
               <br />
               <br />
-              🎓 Master's in CS @ CSULA | AI & Data Science |{" "}
-              <strong>NLP, Deep Learning, Predictive Modeling</strong>
+              🎓 Master's in CS @ CSULA (GPA 3.89) |{" "}
+              <strong>AI, LLM Integration &amp; NLP</strong>
             </p>
           </motion.div>
 

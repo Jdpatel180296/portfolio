@@ -3,11 +3,12 @@ import { motion } from "framer-motion";
 import SocialIcons from "../components/SocialIcons";
 import { MapPin, Mail, Phone, Send, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
-import emailjs from "@emailjs/browser";
 
 interface ContactProps {
   id?: string;
 }
+
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080/api';
 
 const Contact: React.FC<ContactProps> = ({ id }) => {
   const [formData, setFormData] = useState({
@@ -31,27 +32,23 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
     setLoading(true);
 
     try {
-      // Prepare template parameters for EmailJS
-      const templateParams = {
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        title: formData.subject,
-        message: formData.message,
-      };
+      const response = await fetch(`${API_BASE_URL}/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // Send email using EmailJS
-      // You'll need to replace these IDs with your actual EmailJS service, template and user IDs
-      const response = await emailjs.send(
-        "service_3jrah1o", // Replace with your EmailJS service ID
-        "template_ghfutip", // Replace with your EmailJS template ID
-        templateParams,
-        "QykxPJ6gQS-TmV2Rt" // Replace with your EmailJS user ID
-      );
+      const data = await response.json();
 
-      console.log("Email sent successfully:", response);
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to send message');
+      }
 
-      toast.success("Thank you for your message! I'll get back to you soon.");
+      console.log("Message sent successfully:", data);
+
+      toast.success(data.message || "Thank you for your message! I'll get back to you soon.");
       setFormData({
         name: "",
         email: "",
@@ -60,7 +57,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
         message: "",
       });
     } catch (error) {
-      console.error("Error sending email:", error);
+      console.error("Error sending message:", error);
       toast.error("Failed to send message. Please try again later.");
     } finally {
       setLoading(false);
@@ -73,11 +70,11 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
       className="min-h-screen py-20 px-4 relative overflow-hidden"
     >
       {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-rose-50 to-pink-50 animate-gradient-xy"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-rose-50 to-pink-50 dark:from-gray-900 dark:via-rose-950 dark:to-pink-950 animate-gradient-xy"></div>
 
       {/* Floating shapes */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-      <div className="absolute bottom-20 right-10 w-72 h-72 bg-rose-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div className="absolute top-20 left-10 w-72 h-72 bg-orange-300 dark:bg-orange-700 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10 animate-blob"></div>
+      <div className="absolute bottom-20 right-10 w-72 h-72 bg-rose-300 dark:bg-rose-700 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10 animate-blob animation-delay-2000"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Title */}
@@ -95,15 +92,15 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
             transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <MessageCircle className="w-12 h-12 text-orange-600" />
+            <MessageCircle className="w-12 h-12 text-orange-600 dark:text-orange-400" />
           </motion.div>
-          <h1 className="text-5xl sm:text-6xl font-bold mb-4">
+          <h1 className="text-5xl sm:text-6xl font-bold mb-4 dark:text-white">
             Get In{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-rose-600 to-pink-600">
               Touch
             </span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Have a question or want to work together? Let's connect!
           </p>
         </motion.div>
@@ -111,7 +108,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
         <div className="max-w-4xl mx-auto">
           <motion.form
             onSubmit={handleSubmit}
-            className="backdrop-blur-sm bg-white/40 border border-white/30 rounded-2xl shadow-xl p-8 mb-12"
+            className="backdrop-blur-sm bg-white/40 dark:bg-gray-800/40 border border-white/30 dark:border-gray-700/30 rounded-2xl shadow-xl p-8 mb-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -124,7 +121,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 text-base border-2 border-orange-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-300"
+                  className="w-full px-4 py-3 text-base border-2 border-orange-200 dark:border-orange-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white/80 dark:bg-gray-700/80 dark:text-white backdrop-blur-sm transition-all duration-300"
                   placeholder="Full Name"
                   required
                 />
@@ -135,7 +132,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 text-base border-2 border-orange-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-300"
+                  className="w-full px-4 py-3 text-base border-2 border-orange-200 dark:border-orange-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white/80 dark:bg-gray-700/80 dark:text-white backdrop-blur-sm transition-all duration-300"
                   placeholder="Email Address"
                   required
                 />
@@ -149,7 +146,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 text-base border-2 border-orange-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-300"
+                  className="w-full px-4 py-3 text-base border-2 border-orange-200 dark:border-orange-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white/80 dark:bg-gray-700/80 dark:text-white backdrop-blur-sm transition-all duration-300"
                   placeholder="Phone Number"
                 />
               </div>
@@ -159,7 +156,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 text-base border-2 border-orange-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-300"
+                  className="w-full px-4 py-3 text-base border-2 border-orange-200 dark:border-orange-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white/80 dark:bg-gray-700/80 dark:text-white backdrop-blur-sm transition-all duration-300"
                   placeholder="Email Subject"
                   required
                 />
@@ -172,7 +169,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-3 text-base border-2 border-orange-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white/80 backdrop-blur-sm resize-none transition-all duration-300"
+                className="w-full px-4 py-3 text-base border-2 border-orange-200 dark:border-orange-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-white/80 dark:bg-gray-700/80 dark:text-white backdrop-blur-sm resize-none transition-all duration-300"
                 placeholder="Your message"
                 required
               ></textarea>
@@ -214,8 +211,12 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="font-semibold mb-1 text-lg">Location</h3>
-                <p className="text-gray-700">Los Angeles, CA, 90032</p>
+                <h3 className="font-semibold mb-1 text-lg dark:text-white">
+                  Location
+                </h3>
+                <p className="text-gray-700 dark:text-gray-200">
+                  Los Angeles, CA, 90032
+                </p>
               </div>
             </motion.div>
 
@@ -227,7 +228,9 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
                 <Mail className="w-5 h-5" />
               </div>
               <div className="flex-1 max-w-[300px]">
-                <h3 className="font-semibold mb-1 text-lg">Email</h3>
+                <h3 className="font-semibold mb-1 text-lg dark:text-white">
+                  Email
+                </h3>
                 <a
                   href="mailto:jaydeepgondaliya182@gmail.com"
                   className="text-blue-600 hover:text-blue-800 transition-colors inline-block break-words break-all"
@@ -245,7 +248,9 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
                 <Phone className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="font-semibold mb-1 text-lg">Phone</h3>
+                <h3 className="font-semibold mb-1 text-lg dark:text-white">
+                  Phone
+                </h3>
                 <a
                   href="tel:+16266255783"
                   className="text-blue-600 hover:text-blue-800 transition-colors"
@@ -259,7 +264,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
       </div>
 
       <motion.footer
-        className="backdrop-blur-sm bg-white/30 border-t border-white/30 py-10 mt-16 relative z-10"
+        className="backdrop-blur-sm bg-white/30 dark:bg-gray-800/30 border-t border-white/30 dark:border-gray-700/30 py-10 mt-16 relative z-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
@@ -267,9 +272,11 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
       >
         <div className="mx-full px-0">
           <div className="text-center">
-            <h3 className="font-semibold mb-4 text-5xl">Connect with me</h3>
+            <h3 className="font-semibold mb-4 text-5xl dark:text-white">
+              Connect with me
+            </h3>
             <SocialIcons className="justify-center mb-6" />
-            <p className="text-gray-700 text-2xl">
+            <p className="text-gray-700 dark:text-gray-200 text-2xl">
               &copy; Jaydeep Gondaliya - All Rights Reserved
             </p>
           </div>

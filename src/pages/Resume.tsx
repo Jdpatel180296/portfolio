@@ -27,11 +27,11 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
       className="min-h-screen py-20 px-6 relative overflow-hidden"
     >
       {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-teal-50 to-blue-50 animate-gradient-xy"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-teal-50 to-blue-50 dark:from-gray-900 dark:via-teal-950 dark:to-blue-950 animate-gradient-xy"></div>
 
       {/* Floating shapes */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-green-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-      <div className="absolute bottom-20 left-10 w-72 h-72 bg-teal-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div className="absolute top-20 right-10 w-72 h-72 bg-green-300 dark:bg-green-700 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10 animate-blob"></div>
+      <div className="absolute bottom-20 left-10 w-72 h-72 bg-teal-300 dark:bg-teal-700 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10 animate-blob animation-delay-2000"></div>
 
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Header */}
@@ -49,14 +49,14 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
             transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <GraduationCap className="w-12 h-12 text-teal-600" />
+            <GraduationCap className="w-12 h-12 text-teal-600 dark:text-teal-400" />
           </motion.div>
-          <h1 className="text-5xl sm:text-6xl font-bold mb-4">
+          <h1 className="text-5xl sm:text-6xl font-bold mb-4 dark:text-white">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-teal-600 to-blue-600">
               Resume
             </span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             My educational background, skills, and professional experience
           </p>
         </motion.div>
@@ -81,7 +81,7 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
         </motion.div>
         {/* Education */}
         <motion.div
-          className="backdrop-blur-sm bg-white/40 border border-white/30 rounded-2xl shadow-xl p-8 mb-10"
+          className="backdrop-blur-sm bg-white/40 dark:bg-gray-800/40 border border-white/30 dark:border-gray-700/30 rounded-2xl shadow-xl p-8 mb-10"
           {...fadeInProps}
         >
           <SectionHeader icon={GraduationCap} title="Education" />
@@ -92,52 +92,108 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
             time="Aug 2023 – May 2025"
             details={["GPA: 3.89/4"]}
           />
+          <TimelineItem
+            title="Bachelor of Engineering in Computer Engineering"
+            subtitle="Gujarat Technological University"
+            location="Gujarat, India"
+            time="Jul 2017"
+            details={["GPA: 3.44/4"]}
+          />
         </motion.div>
         {/* Skills */}
         <motion.div
-          className="backdrop-blur-sm bg-white/40 border border-white/30 rounded-2xl shadow-xl p-8 mb-10"
+          className="backdrop-blur-sm bg-white/40 dark:bg-gray-800/40 border border-white/30 dark:border-gray-700/30 rounded-2xl shadow-xl p-8 mb-10"
           {...fadeInProps}
         >
           <SectionHeader icon={Trophy} title="Skills" />
-          <p className="text-gray-600">
-            <strong>Backend & Frameworks:</strong>
-            Java 17, Spring Boot, Hibernate, Node.js, Express.js, GraphQL,
-            Microservices
+          <p className="text-gray-600 dark:text-gray-300 space-y-1">
+            <strong>Mobile Development:</strong> React Native (iOS &amp; Android),
+            Firebase, REST API integration in mobile apps
             <br />
-            <strong>Frontend:</strong>
-            React.js, Next.js, TypeScript, Angular, Tailwind, Material UI
+            <strong>iOS (currently learning):</strong> Swift, SwiftUI, UIKit,
+            Core Data, Core Animation, Xcode
             <br />
-            <strong>Databases:</strong>
-            PostgreSQL, MySQL, MongoDB, DynamoDB, Redis, Cassandra
+            <strong>Backend &amp; Frameworks:</strong> Node.js, Express.js, Java
+            17, Spring Boot, GraphQL, RESTful APIs, Microservices
             <br />
-            <strong>Cloud & DevOps:</strong>
-            AWS (EC2, S3, RDS, Lambda), Azure (App Services, AKS), Docker,
-            Kubernetes, Terraform, Jenkins, GitHub Actions
+            <strong>Frontend:</strong> React.js, Next.js, TypeScript, Angular,
+            Tailwind, Material UI
             <br />
-            <strong>Security & APIs:</strong>
-            Spring Security, OAuth2, JWT, Swagger/OpenAPI, HIPAA/GDPR
+            <strong>Databases:</strong> PostgreSQL, MySQL, MongoDB, DynamoDB,
+            Redis, Cassandra
             <br />
-            <strong>Testing:</strong>
-            JUnit, Mockito, Selenium, Cypress, Postman, Performance Testing{" "}
+            <strong>Cloud &amp; DevOps:</strong> AWS (EC2, S3, RDS), Azure (App
+            Services, AKS), Docker, Kubernetes, Terraform, GitHub Actions
+            <br />
+            <strong>Security &amp; APIs:</strong> OAuth2, JWT, RBAC, Spring
+            Security, Swagger/OpenAPI
+            <br />
+            <strong>AI &amp; Integrations:</strong> OpenAI, Ollama,
+            LangChain/LangGraph, Stripe, GoHighLevel CRM, Shopify
+            <br />
+            <strong>Tools &amp; Testing:</strong> Git, Agile/Scrum, JUnit,
+            Selenium, Postman
           </p>
         </motion.div>
         {/* Work Experience */}
         <motion.div
-          className="backdrop-blur-sm bg-white/40 border border-white/30 rounded-2xl shadow-xl p-8 mb-10"
+          className="backdrop-blur-sm bg-white/40 dark:bg-gray-800/40 border border-white/30 dark:border-gray-700/30 rounded-2xl shadow-xl p-8 mb-10"
           {...fadeInProps}
         >
           <SectionHeader icon={Briefcase} title="Work Experience" />
           <TimelineItem
-            title="Software Developer II"
-            subtitle="United Health (Contract)"
-            location="USA"
-            time="Jan 2025 – Present"
+            title="Software Developer"
+            subtitle="Zevrona"
+            location="Los Angeles, CA"
+            time="Aug 2026 – Present"
             details={[
-              "Redesigned healthcare backend services with Java 17 & Spring Boot microservices, boosting throughput 2.3x.",
-              "Built React.js/TypeScript apps improving telehealth workflows, reducing missed consultations by 22%.",
-              "Optimized APIs with GraphQL + Redis caching, cutting latency from 1.9s to 400ms.",
-              "Engineered CI/CD pipelines with Jenkins, GitHub Actions, Docker, and Kubernetes, reducing release cycles from 3 weeks to 4 days.",
-              "Secured 1M+ patient records with HIPAA/GDPR-compliant Spring Security + OAuth2/JWT.",
+              "Modernizing legacy static websites for multiple small-business clients into full-stack Next.js/React + Node.js/Express applications.",
+              "Architecting a shared platform with reusable login, email-notification and Stripe payment modules adapted per client.",
+              "Designing mobile-ready REST APIs so each client platform can extend to iOS and Android apps without rebuilding the backend.",
+              "Building user and admin dashboards with finance monitoring and customer data capture for marketing.",
+              "Designing a ticketing and finance platform for a concert promoter, integrating the Ticketmaster API.",
+              "Integrating GoHighLevel CRM and building LangChain/LangGraph agents to automate Shopify inventory sync and listings.",
+            ]}
+          />
+          <TimelineItem
+            title="Software Developer"
+            subtitle="Studiobloomla"
+            location="USA"
+            time="Jan 2026 – Aug 2026"
+            details={[
+              "Designed and developed a full-stack Node.js + React.js platform supporting multiple service offerings.",
+              "Built an AI-driven financial analysis tool that automates funding-eligibility assessment from client credit data.",
+              "Developed backend automation workflows for data processing, validation and decision logic, speeding up onboarding.",
+            ]}
+          />
+          <TimelineItem
+            title="Software Developer Intern"
+            subtitle="Pyramid Inc."
+            location="USA"
+            time="Aug 2025 – Jan 2026"
+            details={[
+              "Built telehealth scheduling apps with Node.js, React.js and TypeScript, reducing missed consultations by 22%.",
+              "Cut API latency for EHR and pharmacy systems from 1.9s to 400ms with query optimization, Redis caching and PostgreSQL indexing.",
+            ]}
+          />
+          <TimelineItem
+            title="Full Stack Developer"
+            subtitle="Koios Enterprises LLC"
+            location="USA"
+            time="Oct 2025"
+            details={[
+              "Developed RESTful APIs for service listings in a React-based marketplace.",
+              "Implemented role-based authorization to secure API endpoints across user roles.",
+            ]}
+          />
+          <TimelineItem
+            title="Graduate Research Assistant"
+            subtitle="California State University, Los Angeles"
+            location="Los Angeles, CA"
+            time="Feb 2025 – Oct 2025"
+            details={[
+              "Migrated an NLP research system from cloud LLM APIs to local open-source models with Ollama, cutting token costs by about 90%.",
+              "Improved thematic accuracy by 12% and analysis speed by 75%; built a Streamlit app for real-time conversation analysis.",
             ]}
           />
           <TimelineItem
@@ -156,7 +212,7 @@ const Resume: React.FC<ResumeProps> = ({ id }) => {
         </motion.div>
         {/* Certifications */}
         <motion.div
-          className="backdrop-blur-sm bg-white/40 border border-white/30 rounded-2xl shadow-xl p-8"
+          className="backdrop-blur-sm bg-white/40 dark:bg-gray-800/40 border border-white/30 dark:border-gray-700/30 rounded-2xl shadow-xl p-8"
           {...fadeInProps}
         >
           <SectionHeader icon={Award} title="Certifications" />{" "}
@@ -186,7 +242,7 @@ const SectionHeader = ({
 }) => (
   <div className="flex items-center mb-6">
     <Icon className="text-header mr-3 w-6 h-6" />
-    <h2 className="text-2xl font-bold">{title}</h2>
+    <h2 className="text-2xl font-bold dark:text-white">{title}</h2>
   </div>
 );
 
@@ -203,14 +259,14 @@ const TimelineItem = ({
   time: string;
   details?: string[];
 }) => (
-  <div className="border-l-2 border-gray-200 pl-5 ml-3 relative space-y-2 mb-8">
+  <div className="border-l-2 border-gray-200 dark:border-gray-600 pl-5 ml-3 relative space-y-2 mb-8">
     <div className="absolute -left-7 top-0 w-3 h-3 rounded-full bg-header" />
-    <h3 className="text-xl font-bold">{title}</h3>
-    {subtitle && <p className="text-gray-700">{subtitle}</p>}
-    {location && <p className="text-gray-500">{location}</p>}
-    <p className="text-gray-600">{time}</p>
+    <h3 className="text-xl font-bold dark:text-white">{title}</h3>
+    {subtitle && <p className="text-gray-700 dark:text-gray-200">{subtitle}</p>}
+    {location && <p className="text-gray-500 dark:text-gray-400">{location}</p>}
+    <p className="text-gray-600 dark:text-gray-300">{time}</p>
     {Array.isArray(details) && details.length > 0 && (
-      <ul className="list-disc pl-5 space-y-1 text-gray-600">
+      <ul className="list-disc pl-5 space-y-1 text-gray-600 dark:text-gray-300">
         {details.map((d, idx) => (
           <li key={idx}>{d}</li>
         ))}

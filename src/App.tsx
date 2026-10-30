@@ -1,22 +1,24 @@
-import React from 'react';
-import Layout from './components/Layout';
-import Home from './pages/Home';
-import Skills from './pages/Skills';
-import Experience from './pages/Experience';
-import Projects from './pages/Projects';
-import Certificates from './pages/Certificates';
-import Resume from './pages/Resume';
-import Contact from './pages/Contact';
-import { motion } from 'framer-motion';
-
-
+import React from "react";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import Skills from "./pages/Skills";
+import Experience from "./pages/Experience";
+import Projects from "./pages/Projects";
+import Certificates from "./pages/Certificates";
+import Resume from "./pages/Resume";
+import Contact from "./pages/Contact";
+import ThemeToggle from "./components/ThemeToggle";
+import { motion } from "framer-motion";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: { opacity: 1, y: 0 },
 };
 
-const AnimatedSection: React.FC<{ id: string; children: React.ReactNode }> = ({ id, children }) => (
+const AnimatedSection: React.FC<{ id: string; children: React.ReactNode }> = ({
+  id,
+  children,
+}) => (
   <motion.section
     id={id}
     initial="hidden"
@@ -32,35 +34,38 @@ const AnimatedSection: React.FC<{ id: string; children: React.ReactNode }> = ({ 
 
 const App: React.FC = () => {
   return (
-    <Layout>
-      <AnimatedSection id="home">
-        <Home />
-      </AnimatedSection>
+    <>
+      <ThemeToggle />
+      <Layout>
+        <AnimatedSection id="home">
+          <Home />
+        </AnimatedSection>
 
-      <AnimatedSection id="skills">
-        <Skills />
-      </AnimatedSection>
+        <AnimatedSection id="skills">
+          <Skills />
+        </AnimatedSection>
 
-      <AnimatedSection id="experience">
-        <Experience />
-      </AnimatedSection>
+        <AnimatedSection id="experience">
+          <Experience />
+        </AnimatedSection>
 
-      <AnimatedSection id="projects">
-        <Projects />
-      </AnimatedSection>
+        <AnimatedSection id="projects">
+          <Projects />
+        </AnimatedSection>
 
-      <AnimatedSection id="certificates">
-        <Certificates />
-      </AnimatedSection>
+        <AnimatedSection id="certificates">
+          <Certificates />
+        </AnimatedSection>
 
-      <AnimatedSection id="resume">
-        <Resume />
-      </AnimatedSection>
+        <AnimatedSection id="resume">
+          <Resume />
+        </AnimatedSection>
 
-      <AnimatedSection id="contact">
-        <Contact />
-      </AnimatedSection>
-    </Layout>
+        <AnimatedSection id="contact">
+          <Contact />
+        </AnimatedSection>
+      </Layout>
+    </>
   );
 };
 
